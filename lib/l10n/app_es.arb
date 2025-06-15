@@ -1,0 +1,96 @@
+{
+    "@@locale": "es",
+    "helloWorld": "¡Hola Mundo!",
+    "changeThemeColor": "Cambiar el color del tema",
+    "changeThemeMode": "Cambiar al modo {mode, select, light{Claro} dark{Oscuro} other{Sistema}}",
+    "changeLanguage": "Cambiar idioma",
+    "language": "Español",
+    "en": "Inglés",
+    "@en": {
+        "description": "El código del idioma inglés"
+    },
+    "es": "Español",
+    "@es": {
+        "description": "El código del idioma español"
+    },
+    "fr": "Francés",
+    "@fr": {
+        "description": "El código del idioma francés"
+    },
+    "de": "Alemán",
+    "@de": {
+        "description": "El código del idioma alemán"
+    },
+    "it": "Italiano",
+    "@it": {
+        "description": "El código del idioma italiano"
+    },
+    "pt": "Portugués",
+    "@pt": {
+        "description": "El código del idioma portugués"
+    },
+    "ru": "Ruso",
+    "@ru": {
+        "description": "El código del idioma ruso"
+    },
+    "zh": "Chino",
+    "@zh": {
+        "description": "El código del idioma chino"
+    },
+    "ja": "Japonés",
+    "@ja": {
+        "description": "El código del idioma japonés"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "El código del idioma hindi"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "El código del idioma kannada"
+    },
+    "ta": "Tamil",
+    "@ta": {
+        "description": "El código del idioma tamil"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "El código del idioma telugu"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "El código del idioma malayalam"
+    },
+    "ar": "Árabe",
+    "@ar": {
+        "description": "El código del idioma árabe"
+    },
+    "nl": "Neerlandés",
+    "@nl": {
+        "description": "El código del idioma neerlandés"
+    },
+    "el": "Griego",
+    "@el": {
+        "description": "El código del idioma griego"
+    },
+    "id": "Indonesio",
+    "@id": {
+        "description": "El código del idioma indonesio"
+    },
+    "ko": "Coreano",
+    "@ko": {
+        "description": "El código del idioma coreano"
+    },
+    "pl": "Polaco",
+    "@pl": {
+        "description": "El código del idioma polaco"
+    },
+    "ro": "Rumano",
+    "@ro": {
+        "description": "El código del idioma rumano"
+    },
+    "tr": "Turco",
+    "@tr": {
+        "description": "El código del idioma turco"
+    }
+}

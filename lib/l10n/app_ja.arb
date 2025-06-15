@@ -1,0 +1,96 @@
+{
+    "@@locale": "ja",
+    "helloWorld": "「こんにちは世界」",
+    "changeThemeColor": "テーマカラーを変更する",
+    "changeThemeMode": "モードに切り替える {mode, select, light{ライト} dark{ダーク} other{システム}}",
+    "changeLanguage": "言語を変更",
+    "language": "日本語",
+    "en": "英語",
+    "@en": {
+        "description": "英語の言語コード"
+    },
+    "es": "スペイン語",
+    "@es": {
+        "description": "スペイン語の言語コード"
+    },
+    "fr": "フランス語",
+    "@fr": {
+        "description": "フランス語の言語コード"
+    },
+    "de": "ドイツ語",
+    "@de": {
+        "description": "ドイツ語の言語コード"
+    },
+    "it": "イタリア語",
+    "@it": {
+        "description": "イタリア語の言語コード"
+    },
+    "pt": "ポルトガル語",
+    "@pt": {
+        "description": "ポルトガル語の言語コード"
+    },
+    "ru": "ロシア語",
+    "@ru": {
+        "description": "ロシア語の言語コード"
+    },
+    "zh": "中国語",
+    "@zh": {
+        "description": "中国語の言語コード"
+    },
+    "ja": "日本語",
+    "@ja": {
+        "description": "日本語の言語コード"
+    },
+    "hi": "ヒンディー語",
+    "@hi": {
+        "description": "ヒンディー語の言語コード"
+    },
+    "kn": "カンナダ語",
+    "@kn": {
+        "description": "カンナダ語の言語コード"
+    },
+    "ta": "タミル語",
+    "@ta": {
+        "description": "タミル語の言語コード"
+    },
+    "te": "テルグ語",
+    "@te": {
+        "description": "テルグ語の言語コード"
+    },
+    "ml": "マラヤーラム語",
+    "@ml": {
+        "description": "マラヤーラム語の言語コード"
+    },
+    "ar": "アラビア語",
+    "@ar": {
+        "description": "アラビア語の言語コード"
+    },
+    "nl": "オランダ語",
+    "@nl": {
+        "description": "オランダ語の言語コード"
+    },
+    "el": "ギリシャ語",
+    "@el": {
+        "description": "ギリシャ語の言語コード"
+    },
+    "id": "インドネシア語",
+    "@id": {
+        "description": "インドネシア語の言語コード"
+    },
+    "ko": "韓国語",
+    "@ko": {
+        "description": "韓国語の言語コード"
+    },
+    "pl": "ポーランド語",
+    "@pl": {
+        "description": "ポーランド語の言語コード"
+    },
+    "ro": "ルーマニア語",
+    "@ro": {
+        "description": "ルーマニア語の言語コード"
+    },
+    "tr": "トルコ語",
+    "@tr": {
+        "description": "トルコ語の言語コード"
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "@@locale": "en",
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+        "description": "The conventional newborn programmer greeting"
+    },
+    "changeThemeColor": "Change Theme Color",
+    "@changeThemeColor": {
+        "description": "Text for changing the theme color in the app"
+    },
+    "changeThemeMode": "Switch to {mode, select, light{Light} dark{Dark} other{System}} Mode",
+    "@changeThemeMode": {
+        "description": "Text for switching the theme mode in the app, where {mode} is replaced with 'Light', 'Dark', or 'System'",
+        "placeholders": {
+            "mode": {
+                "type": "String"
+            }
+        }
+    },
+    "changeLanguage": "Change Language",
+    "@changeLanguage": {
+        "description": "Text for changing the language in the app"
+    },
+    "language": "English",
+    "@language": {
+        "description": "The name of the language"
+    },
+    "en": "English",
+    "@en": {
+        "description": "The English language code"
+    },
+    "es": "Spanish",
+    "@es": {
+        "description": "The Spanish language code"
+    },
+    "fr": "French",
+    "@fr": {
+        "description": "The French language code"
+    },
+    "de": "German",
+    "@de": {
+        "description": "The German language code"
+    },
+    "it": "Italian",
+    "@it": {
+        "description": "The Italian language code"
+    },
+    "pt": "Portuguese",
+    "@pt": {
+        "description": "The Portuguese language code"
+    },
+    "ru": "Russian",
+    "@ru": {
+        "description": "The Russian language code"
+    },
+    "zh": "Chinese",
+    "@zh": {
+        "description": "The Chinese language code"
+    },
+    "ja": "Japanese",
+    "@ja": {
+        "description": "The Japanese language code"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "The Hindi language code"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "The Kannada language code"
+    },
+    "ta": "Tamil",
+    "@ta": {
+        "description": "The Tamil language code"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "The Telugu language code"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "The Malayalam language code"
+    },
+    "ar": "Arabic",
+    "@ar": {
+        "description": "The Arabic language code"
+    },
+    "nl": "Dutch",
+    "@nl": {
+        "description": "The Dutch language code"
+    },
+    "el": "Greek",
+    "@el": {
+        "description": "The Greek language code"
+    },
+    "id": "Indonesian",
+    "@id": {
+        "description": "The Indonesian language code"
+    },
+    "ko": "Korean",
+    "@ko": {
+        "description": "The Korean language code"
+    },
+    "pl": "Polish",
+    "@pl": {
+        "description": "The Polish language code"
+    },
+    "ro": "Romanian",
+    "@ro": {
+        "description": "The Romanian language code"
+    },
+    "tr": "Turkish",
+    "@tr": {
+        "description": "The Turkish language code"
+    }
+}

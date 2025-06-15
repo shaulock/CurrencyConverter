@@ -1,0 +1,96 @@
+{
+    "@@locale": "zh",
+    "helloWorld": "你好世界!",
+    "changeThemeColor": "更改主题颜色",
+    "changeThemeMode": "切换到{mode, select, light{亮色} dark{暗色} other{系统}}模式",
+    "changeLanguage": "更改语言",
+    "language": "中文",
+    "en": "英语",
+    "@en": {
+        "description": "英语语言代码"
+    },
+    "es": "西班牙语",
+    "@es": {
+        "description": "西班牙语语言代码"
+    },
+    "fr": "法语",
+    "@fr": {
+        "description": "法语语言代码"
+    },
+    "de": "德语",
+    "@de": {
+        "description": "德语语言代码"
+    },
+    "it": "意大利语",
+    "@it": {
+        "description": "意大利语语言代码"
+    },
+    "pt": "葡萄牙语",
+    "@pt": {
+        "description": "葡萄牙语语言代码"
+    },
+    "ru": "俄语",
+    "@ru": {
+        "description": "俄语语言代码"
+    },
+    "zh": "中文",
+    "@zh": {
+        "description": "中文语言代码"
+    },
+    "ja": "日语",
+    "@ja": {
+        "description": "日语语言代码"
+    },
+    "hi": "印地语",
+    "@hi": {
+        "description": "印地语语言代码"
+    },
+    "kn": "卡纳达语",
+    "@kn": {
+        "description": "卡纳达语语言代码"
+    },
+    "ta": "泰米尔语",
+    "@ta": {
+        "description": "泰米尔语语言代码"
+    },
+    "te": "泰卢固语",
+    "@te": {
+        "description": "泰卢固语语言代码"
+    },
+    "ml": "马拉雅拉姆语",
+    "@ml": {
+        "description": "马拉雅拉姆语语言代码"
+    },
+    "ar": "阿拉伯语",
+    "@ar": {
+        "description": "阿拉伯语语言代码"
+    },
+    "nl": "荷兰语",
+    "@nl": {
+        "description": "荷兰语语言代码"
+    },
+    "el": "希腊语",
+    "@el": {
+        "description": "希腊语语言代码"
+    },
+    "id": "印尼语",
+    "@id": {
+        "description": "印尼语语言代码"
+    },
+    "ko": "韩语",
+    "@ko": {
+        "description": "韩语语言代码"
+    },
+    "pl": "波兰语",
+    "@pl": {
+        "description": "波兰语语言代码"
+    },
+    "ro": "罗马尼亚语",
+    "@ro": {
+        "description": "罗马尼亚语语言代码"
+    },
+    "tr": "土耳其语",
+    "@tr": {
+        "description": "土耳其语语言代码"
+    }
+}

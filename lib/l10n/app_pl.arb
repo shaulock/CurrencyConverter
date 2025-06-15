@@ -1,0 +1,99 @@
+{
+    "@@locale": "pl",
+    "changeThemeMode": "Przełącz na tryb {mode, select, light{jasny} dark{ciemny} other{systemowy}}",
+    "changeThemeColor": "Zmień kolor motywu",
+    "changeLanguage": "Zmień język",
+    "helloWorld": "Witaj świecie!",
+    "language": "Polski",
+    "en": "Angielski",
+    "@en": {
+        "description": "Kod języka dla angielskiego"
+    },
+    "es": "Hiszpański",
+    "@es": {
+        "description": "Kod języka dla hiszpańskiego"
+    },
+    "fr": "Francuski",
+    "@fr": {
+        "description": "Kod języka dla francuskiego"
+    },
+    "de": "Niemiecki",
+    "@de": {
+        "description": "Kod języka dla niemieckiego"
+    },
+    "it": "Włoski",
+    "@it": {
+        "description": "Kod języka dla włoskiego"
+    },
+    "pt": "Portugalski",
+    "@pt": {
+        "description": "Kod języka dla portugalskiego"
+    },
+    "ru": "Rosyjski",
+    "@ru": {
+        "description": "Kod języka dla rosyjskiego"
+    },
+    "zh": "Chiński",
+    "@zh": {
+        "description": "Kod języka dla chińskiego"
+    },
+    "ja": "Japoński",
+    "@ja": {
+        "description": "Kod języka dla japońskiego"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Kod języka dla hindi"
+    },
+    "kn": "Kannada",
+
+    "@kn": {
+        "description": "Kod języka dla kannada"
+    },
+    "ta": "Tamilski",
+    "@ta": {
+        "description": "Kod języka dla tamila"
+    },
+
+    "te": "Telugu",
+    "@te": {
+        "description": "Kod języka dla telugu"
+    },
+    "ml": "Malajalam",
+    "@ml": {
+        "description": "Kod języka dla malajalam"
+    },
+    "ar": "Arabski",
+    "@ar": {
+        "description": "Kod języka dla arabskiego"
+    },
+
+    "nl": "Holenderski",
+    "@nl": {
+        "description": "Kod języka dla holenderskiego"
+    },
+    "el": "Grecki",
+    "@el": {
+        "description": "Kod języka dla greckiego"
+    },
+    "id": "Indonezyjski",
+    "@id": {
+        "description": "Kod języka dla indonezyjskiego"
+    },
+    "ko": "Koreański",
+    "@ko": {
+        "description": "Kod języka dla koreańskiego"
+    },
+    "pl": "Polski",
+    "@pl": {
+        "description": "Kod języka dla polskiego"
+    },
+    "ro": "Rumuński",
+    "@ro": {
+        "description": "Kod języka dla rumuńskiego"
+    },
+    "tr": "Turecki",
+    "@tr": {
+        "description": "Kod języka dla tureckiego"
+    }
+}

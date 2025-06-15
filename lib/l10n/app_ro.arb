@@ -1,0 +1,97 @@
+{
+    "@@locale": "ro",
+    "helloWorld": "Salut Lume!",
+    "changeThemeColor": "Schimbă culoarea temei",
+    "changeThemeMode": "Comutare la modul {mode, select, light{luminos} dark{întunecat} other{sistem}}",
+    "changeLanguage": "Schimbă limba",
+    "language": "Română",
+    "en": "Engleză",
+    "@en": {
+        "description": "Codul de limbă engleză"
+    },
+    "es": "Spaniolă",
+    "@es": {
+        "description": "Codul de limbă spaniolă"
+    },
+    "fr": "Franceză",
+    "@fr": {
+        "description": "Codul de limbă franceză"
+    },
+    "de": "Germană",
+    "@de": {
+        "description": "Codul de limbă germană"
+    },
+    "it": "Italiană",
+    "@it": {
+        "description": "Codul de limbă italiană"
+    },
+    "pt": "Portugheză",
+    "@pt": {
+        "description": "Codul de limbă portugheză"
+    },
+    "ru": "Rusă",
+    "@ru": {
+        "description": "Codul de limbă rusă"
+    },
+    "zh": "Chineză",
+    "@zh": {
+        "description": "Codul de limbă chineză"
+    },
+    "ja": "Japoneză",
+    "@ja": {
+        "description":
+            "Codul de limbă japoneză"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Codul de limbă hindi"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "Codul de limbă kannada"
+    },
+    "ta": "Tamil",
+    "@ta": {
+        "description": "Codul de limbă tamil"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "Codul de limbă telugu"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "Codul de limbă malayalam"
+    },
+    "ar": "Arabă",
+    "@ar": {
+        "description": "Codul de limbă arabă"
+    },
+    "nl": "Olandeză",
+    "@nl": {
+        "description": "Codul de limbă olandeză"
+    },
+    "el": "Greacă",
+    "@el": {
+        "description": "Codul de limbă greacă"
+    },
+    "id": "Indoneziană",
+    "@id": {
+        "description": "Codul de limbă indoneziană"
+    },
+    "pl": "Poloneză",
+    "@pl": {
+        "description": "Codul de limbă poloneză"
+    },
+    "ko": "Coreeană",
+    "@ko": {
+        "description": "Codul de limbă coreeană"
+    },
+    "ro": "Română",
+    "@ro": {
+        "description": "Codul de limbă română"
+    },
+    "tr": "Turcă",
+    "@tr": {
+        "description": "Codul de limbă turcă"
+    }
+}

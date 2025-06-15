@@ -1,0 +1,96 @@
+{
+    "@@locale": "de",
+    "helloWorld": "Hallo Welt!",
+    "changeThemeColor": "Designfarbe ändern",
+    "changeThemeMode": "In den {mode, select, light{Hell} dark{Dunkel} other{System}}modus wechseln",
+    "changeLanguage": "Sprache ändern",
+    "language": "Deutsch",
+    "en": "Englisch",
+    "@en": {
+        "description": "Der englische Sprachcode"
+    },
+    "es": "Spanisch",
+    "@es": {
+        "description": "Der spanische Sprachcode"
+    },
+    "fr": "Französisch",
+    "@fr": {
+        "description": "Der französische Sprachcode"
+    },
+    "de": "Deutsch",
+    "@de": {
+        "description": "Der deutsche Sprachcode"
+    },
+    "it": "Italienisch",
+    "@it": {
+        "description": "Der italienische Sprachcode"
+    },
+    "pt": "Portugiesisch",
+    "@pt": {
+        "description": "Der portugiesische Sprachcode"
+    },
+    "ru": "Russisch",
+    "@ru": {
+        "description": "Der russische Sprachcode"
+    },
+    "zh": "Chinesisch",
+    "@zh": {
+        "description": "Der chinesische Sprachcode"
+    },
+    "ja": "Japanisch",
+    "@ja": {
+        "description": "Der japanische Sprachcode"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Der Hindi Sprachcode"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "Der Kannada Sprachcode"
+    },
+    "ta": "Tamil",
+    "@ta": {
+        "description": "Der Tamil Sprachcode"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "Der Telugu Sprachcode"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "Der Malayalam Sprachcode"
+    },
+    "ar": "Arabisch",
+    "@ar": {
+        "description": "Der arabische Sprachcode"
+    },
+    "nl": "Niederländisch",
+    "@nl": {
+        "description": "Der niederländische Sprachcode"
+    },
+    "el": "Griechisch",
+    "@el": {
+        "description": "Der griechische Sprachcode"
+    },
+    "id": "Indonesisch",
+    "@id": {
+        "description": "Der indonesische Sprachcode"
+    },
+    "ko": "Koreanisch",
+    "@ko": {
+        "description": "Der koreanische Sprachcode"
+    },
+    "pl": "Polnisch",
+    "@pl": {
+        "description": "Der polnische Sprachcode"
+    },
+    "ro": "Rumänisch",
+    "@ro": {
+        "description": "Der rumänische Sprachcode"
+    },
+    "tr": "Türkisch",
+    "@tr": {
+        "description": "Der türkische Sprachcode"
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "@@locale": "id",
+    "helloWorld": "Halo Dunia!",
+    "changeThemeColor": "Ubah Warna Tema",
+    "changeThemeMode": "Beralih ke mode {mode, select, light{Terang} dark{Gelap} other{Sistem}}",
+    "changeLanguage": "Ubah Bahasa",
+    "language": "Bahasa Indonesia",
+    "en": "Inggris",
+    "@en": {
+        "description": "Kode bahasa untuk bahasa Inggris"
+    },
+    "es": "Spanyol",
+    "@es": {
+        "description": "Kode bahasa untuk bahasa Spanyol"
+    },
+    "fr": "Prancis",
+    "@fr": {
+        "description": "Kode bahasa untuk bahasa Prancis"
+    },
+    "de": "Jerman",
+    "@de": {
+        "description": "Kode bahasa untuk bahasa Jerman"
+    },
+    "it": "Italia",
+    "@it": {
+        "description": "Kode bahasa untuk bahasa Italia"
+    },
+    "pt": "Portugis",
+    "@pt": {
+        "description": "Kode bahasa untuk bahasa Portugis"
+    },
+    "ru": "Rusia",
+    "@ru": {
+        "description": "Kode bahasa untuk bahasa Rusia"
+    },
+    "zh": "Cina",
+    "@zh": {
+        "description": "Kode bahasa untuk bahasa Cina"
+    },
+    "ja": "Jepang",
+    "@ja": {
+        "description": "Kode bahasa untuk bahasa Jepang"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Kode bahasa untuk bahasa Hindi"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "Kode bahasa untuk bahasa Kannada"
+    },
+    "ta": "Tamil",
+    "@ta": {
+        "description": "Kode bahasa untuk bahasa Tamil"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "Kode bahasa untuk bahasa Telugu"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "Kode bahasa untuk bahasa Malayalam"
+    },
+    "ar": "Arab",
+    "@ar": {
+        "description": "Kode bahasa untuk bahasa Arab"
+    },
+    "nl": "Belanda",
+    "@nl": {
+        "description": "Kode bahasa untuk bahasa Belanda"
+    },
+    "el": "Yunani",
+    "@el": {
+        "description": "Kode bahasa untuk bahasa Yunani"
+    },
+    "id": "Bahasa Indonesia",
+    "@id": {
+        "description": "Kode bahasa untuk Bahasa Indonesia"
+    },
+    "ko": "Korea",
+    "@ko": {
+        "description": "Kode bahasa untuk bahasa Korea"
+    },
+    "pl": "Polandia",
+    "@pl": {
+        "description": "Kode bahasa untuk bahasa Polandia"
+    },
+    "ro": "Rumania",
+    "@ro": {
+        "description": "Kode bahasa untuk bahasa Rumania"
+    },
+    "tr": "Turki",
+    "@tr": {
+        "description": "Kode bahasa untuk bahasa Turki"
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "@@locale": "fr",
+    "helloWorld": "Bonjour le monde!",
+    "changeThemeColor": "Changer la couleur du thème",
+    "changeThemeMode": "Passer au thème {mode, select, light{clair} dark{sombre} other{système}}",
+    "changeLanguage": "Changer de langue",
+    "language": "Français",
+    "en": "Anglais",
+    "@en": {
+        "description": "Le code de la langue anglaise"
+    },
+    "es": "Espagnol",
+    "@es": {
+        "description": "Le code de la langue espagnole"
+    },
+    "fr": "Français",
+    "@fr": {
+        "description": "Le code de la langue française"
+    },
+    "de": "Allemand",
+    "@de": {
+        "description": "Le code de la langue allemande"
+    },
+    "it": "Italien",
+    "@it": {
+        "description": "Le code de la langue italienne"
+    },
+    "pt": "Portugais",
+    "@pt": {
+        "description": "Le code de la langue portugaise"
+    },
+    "ru": "Russe",
+    "@ru": {
+        "description": "Le code de la langue russe"
+    },
+    "zh": "Chinois",
+    "@zh": {
+        "description": "Le code de la langue chinoise"
+    },
+    "ja": "Japonais",
+    "@ja": {
+        "description": "Le code de la langue japonaise"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Le code de la langue hindi"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "Le code de la langue kannada"
+    },
+    "ta": "Tamoul",
+    "@ta": {
+        "description": "Le code de la langue tamoule"
+    },
+    "te": "Télougou",
+    "@te": {
+        "description": "Le code de la langue télougou"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "Le code de la langue malayalam"
+    },
+    "ar": "Arabe",
+    "@ar": {
+        "description": "Le code de la langue arabe"
+    },
+    "nl": "Néerlandais",
+    "@nl": {
+        "description": "Le code de la langue néerlandaise"
+    },
+    "el": "Grec",
+    "@el": {
+        "description": "Le code de la langue grecque"
+    },
+    "id": "Indonésien",
+    "@id": {
+        "description": "Le code de la langue indonésienne"
+    },
+    "ko": "Coréen",
+    "@ko": {
+        "description": "Le code de la langue coréenne"
+    },
+    "pl": "Polonais",
+    "@pl": {
+        "description": "Le code de la langue polonaise"
+    },
+    "ro": "Roumain",
+    "@ro": {
+        "description": "Le code de la langue roumaine"
+    },
+    "tr": "Turc",
+    "@tr": {
+        "description": "Le code de la langue turque"
+    }
+}

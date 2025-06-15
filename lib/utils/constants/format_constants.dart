@@ -1,16 +1,9 @@
+import 'package:currency_converter/utils/constants/constants_base.dart';
 import 'package:intl/intl.dart';
 
 class FormatConstants {
-  static DateFormat dateFormat = DateFormat('yyyy-MM-dd');
-  static DateFormat timeFormat = DateFormat('HH:mm:ss');
-  static DateFormat dateTimeFormat = DateFormat('yyyy-MM-dd HH:mm:ss');
-  static DateFormat dateTimeWithMillisecondsFormat = DateFormat(
-    'yyyy-MM-dd HH:mm:ss.SSS',
-  );
-  static DateFormat dateTimeWithMillisecondsAndTimezoneFormat = DateFormat(
-    'yyyy-MM-dd HH:mm:ss.SSS Z',
-  );
-  static DateFormat dateTimeWithTimezoneFormat = DateFormat(
-    'yyyy-MM-dd HH:mm:ss Z',
-  );
+  static DateFormat get dateFormat =>
+      DateFormat(languageAndFormatController.selectedDateFormat.value);
+  static DateFormat get timeFormat =>
+      DateFormat(languageAndFormatController.selectedTimeFormat.value);
 }

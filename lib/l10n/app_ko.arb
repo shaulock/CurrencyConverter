@@ -1,0 +1,96 @@
+{
+    "@@locale": "ko",
+    "changeLanguage": "언어 변경",
+    "changeThemeColor": "테마 색상 변경",
+    "changeThemeMode": "{mode, select, light{밝은} dark{어두운} other{시스템}} 모드로 전환",
+    "helloWorld": "안녕하세요!",
+    "language": "한국어",
+    "en": "영어",
+    "@en": {
+        "description": "영어 언어 코드"
+    },
+    "es": "스페인어",
+    "@es": {
+        "description": "스페인어 언어 코드"
+    },
+    "fr": "프랑스어",
+    "@fr": {
+        "description": "프랑스어 언어 코드"
+    },
+    "de": "독일어",
+    "@de": {
+        "description": "독일어 언어 코드"
+    },
+    "it": "이탈리아어",
+    "@it": {
+        "description": "이탈리아어 언어 코드"
+    },
+    "pt": "포르투갈어",
+    "@pt": {
+        "description": "포르투갈어 언어 코드"
+    },
+    "ru": "러시아어",
+    "@ru": {
+        "description": "러시아어 언어 코드"
+    },
+    "zh": "중국어",
+    "@zh": {
+        "description": "중국어 언어 코드"
+    },
+    "ja": "일본어",
+    "@ja": {
+        "description": "일본어 언어 코드"
+    },
+    "hi": "힌디어",
+    "@hi": {
+        "description": "힌디어 언어 코드"
+    },
+    "kn": "칸나다어",
+    "@kn": {
+        "description": "칸나다어 언어 코드"
+    },
+    "ta": "타밀어",
+    "@ta": {
+        "description": "타밀어 언어 코드"
+    },
+    "te": "텔루구어",
+    "@te": {
+        "description": "텔루구어 언어 코드"
+    },
+    "ml": "말라얄람어",
+    "@ml": {
+        "description": "말라얄람어 언어 코드"
+    },
+    "ar": "아랍어",
+    "@ar": {
+        "description": "아랍어 언어 코드"
+    },
+    "nl": "네덜란드어",
+    "@nl": {
+        "description": "네덜란드어 언어 코드"
+    },
+    "el": "그리스어",
+    "@el": {
+        "description": "그리스어 언어 코드"
+    },
+    "id": "인도네시아어",
+    "@id": {
+        "description": "인도네시아어 언어 코드"
+    },
+    "ko": "한국어",
+    "@ko": {
+        "description": "한국어 언어 코드"
+    },
+    "pl": "폴란드어",
+    "@pl": {
+        "description": "폴란드어 언어 코드"
+    },
+    "ro": "루마니아어",
+    "@ro": {
+        "description": "루마니아어 언어 코드"
+    },
+    "tr": "터키어",
+    "@tr": {
+        "description": "터키어 언어 코드"
+    }
+}

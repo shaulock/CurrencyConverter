@@ -1,0 +1,98 @@
+{
+    "@@locale": "tr",
+    "language": "Türkçe",
+    "helloWorld": "Selam Dünya!",
+    "changeThemeColor": "Tema Rengini Değiştir",
+    "changeThemeMode" : "{mode, select, light{Açık moda} dark{Koyu moda} other{Sistem moduna}} Geç",
+    "changeLanguage": "Dili değiştir",
+    "en": "İngilizce",
+    "@en": {
+        "description": "İngilizce dil kodu"
+    },
+    "es": "İspanyolca",
+    "@es": {
+        "description": "İspanyolca dil kodu"
+    },
+    "fr": "Fransızca",
+
+    "@fr": {
+        "description": "Fransızca dil kodu"
+    },
+    "de": "Almanca",
+    "@de": {
+        "description": "Almanca dil kodu"
+    },
+    "it": "İtalyanca",
+    "@it": {
+        "description": "İtalyanca dil kodu"
+    },
+    "pt": "Portekizce",
+    "@pt": {
+        "description": "Portekizce dil kodu"
+    },
+    "ru": "Rusça",
+    "@ru": {
+        "description": "Rusça dil kodu"
+    },
+    "zh": "Çince",
+    "@zh": {
+        "description": "Çince dil kodu"
+    },
+    "ja": "Japonca",
+    "@ja": {
+        "description": "Japonca dil kodu"
+    },
+    "hi": "Hintçe",
+    "@hi": {
+        "description": "Hintçe dil kodu"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "Kannada dil kodu"
+    },
+    "ta": "Tamilce",
+    "@ta": {
+        "description": "Tamilce dil kodu"
+    },
+    "te": "Telugu",
+
+    "@te": {
+        "description": "Telugu dil kodu"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "Malayalam dil kodu"
+    },
+    "ar": "Arapça",
+    "@ar": {
+        "description": "Arapça dil kodu"
+    },
+    "nl": "Flemenkçe",
+    "@nl": {
+        "description": "Flemenkçe dil kodu"
+    },
+    "el": "Yunanca",
+    "@el": {
+        "description": "Yunanca dil kodu"
+    },
+    "id": "Endonezce",
+    "@id": {
+        "description": "Endonezce dil kodu"
+    },
+    "ko": "Korece",
+    "@ko": {
+        "description": "Korece dil kodu"
+    },
+    "pl": "Lehçe",
+    "@pl": {
+        "description": "Lehçe dil kodu"
+    },
+    "ro": "Romence",
+    "@ro": {
+        "description": "Romence dil kodu"
+    },
+    "tr": "Türkçe",
+    "@tr": {
+        "description": "Türkçe dil kodu"
+    }
+}

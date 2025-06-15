@@ -1,0 +1,96 @@
+{
+    "@@locale": "pt",
+    "helloWorld": "Olá, mundo!",
+    "changeThemeColor": "Alterar cor do tema",
+    "changeThemeMode": "Mudar para o modo {mode, select, light{Light} dark{Escuro} other{Sistema}}",
+    "changeLanguage": "Alterar idioma",
+    "language": "Português",
+    "en": "Inglês",
+    "@en": {
+        "description": "Código do idioma inglês"
+    },
+    "es": "Espanhol",
+    "@es": {
+        "description": "Código do idioma espanhol"
+    },
+    "fr": "Francês",
+    "@fr": {
+        "description": "Código do idioma francês"
+    },
+    "de": "Alemão",
+    "@de": {
+        "description": "Código do idioma alemão"
+    },
+    "it": "Italiano",
+    "@it": {
+        "description": "Código do idioma italiano"
+    },
+    "pt": "Português",
+    "@pt": {
+        "description": "Código do idioma português"
+    },
+    "ru": "Russo",
+    "@ru": {
+        "description": "Código do idioma russo"
+    },
+    "zh": "Chinês",
+    "@zh": {
+        "description": "Código do idioma chinês"
+    },
+    "ja": "Japonês",
+    "@ja": {
+        "description": "Código do idioma japonês"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Código do idioma hindi"
+    },
+    "kn": "Canarês",
+    "@kn": {
+        "description": "Código do idioma canarês"
+    },
+    "ta": "Tâmil",
+    "@ta": {
+        "description": "Código do idioma tâmil"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "Código do idioma telugu"
+    },
+    "ml": "Malaiala",
+    "@ml": {
+        "description": "Código do idioma malaiala"
+    },
+    "ar": "Árabe",
+    "@ar": {
+        "description": "Código do idioma árabe"
+    },
+    "nl": "Holandês",
+    "@nl": {
+        "description": "Código do idioma holandês"
+    },
+    "el": "Grego",
+    "@el": {
+        "description": "Código do idioma grego"
+    },
+    "id": "Indonésio",
+    "@id": {
+        "description": "Código do idioma indonésio"
+    },
+    "ko": "Coreano",
+    "@ko": {
+        "description": "Código do idioma coreano"
+    },
+    "pl": "Polonês",
+    "@pl": {
+        "description": "Código do idioma polonês"
+    },
+    "ro": "Romeno",
+    "@ro": {
+        "description": "Código do idioma romeno"
+    },
+    "tr": "Turco",
+    "@tr": {
+        "description": "Código do idioma turco"
+    }
+}

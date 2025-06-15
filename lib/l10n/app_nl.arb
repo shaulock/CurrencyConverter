@@ -1,0 +1,96 @@
+{
+    "@@locale": "nl",
+    "language": "Nederlands",
+    "helloWorld": "Hallo Wereld!",
+    "changeThemeColor": "Themakleur wijzigen",
+    "changeThemeMode": "Overschakelen naar de {mode, select, light{lichte } dark{donkere } other{systeem}}modus",
+    "changeLanguage": "Taal wijzigen",
+    "en": "Engels",
+    "@en": {
+        "description": "Taalcode voor Engels"
+    },
+    "es": "Spaans",
+    "@es": {
+        "description": "Taalcode voor Spaans"
+    },
+    "fr": "Frans",
+    "@fr": {
+        "description": "Taalcode voor Frans"
+    },
+    "de": "Duits",
+    "@de": {
+        "description": "Taalcode voor Duits"
+    },
+    "it": "Italiaans",
+    "@it": {
+        "description": "Taalcode voor Italiaans"
+    },
+    "pt": "Portugees",
+    "@pt": {
+        "description": "Taalcode voor Portugees"
+    },
+    "ru": "Russisch",
+    "@ru": {
+        "description": "Taalcode voor Russisch"
+    },
+    "zh": "Chinees",
+    "@zh": {
+        "description": "Taalcode voor Chinees"
+    },
+    "ja": "Japans",
+    "@ja": {
+        "description": "Taalcode voor Japans"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Taalcode voor Hindi"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "Taalcode voor Kannada"
+    },
+    "ta": "Tamil",
+    "@ta": {
+        "description": "Taalcode voor Tamil"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "Taalcode voor Telugu"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "Taalcode voor Malayalam"
+    },
+    "nl": "Nederlands",
+    "@nl": {
+        "description": "Taalcode voor Nederlands"
+    },
+    "ar": "Arabisch",
+    "@ar": {
+        "description": "Taalcode voor Arabisch"
+    },
+    "el": "Grieks",
+    "@el": {
+        "description": "Taalcode voor Grieks"
+    },
+    "id": "Indonesisch",
+    "@id": {
+        "description": "Taalcode voor Indonesisch"
+    },
+    "ko": "Koreaans",
+    "@ko": {
+        "description": "Taalcode voor Koreaans"
+    },
+    "pl": "Pools",
+    "@pl": {
+        "description": "Taalcode voor Pools"
+    },
+    "ro": "Roemeens",
+    "@ro": {
+        "description": "Taalcode voor Roemeens"
+    },
+    "tr": "Turks",
+    "@tr": {
+        "description": "Taalcode voor Turks"
+    }
+}

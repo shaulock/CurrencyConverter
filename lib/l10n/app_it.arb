@@ -1,0 +1,97 @@
+{
+    "@@locale": "it",
+    "helloWorld": "Ciao mondo!",
+    "changeThemeColor": "Cambia colore del tema",
+    "changeThemeMode": "Passa alla modalità {mode, select, light{chiara} dark{scura} other{di sistema}}",
+    "changeLanguage": "Cambia lingua",
+    "language": "Italiano",
+    "en": "Inglese",
+    "@en": {
+        "description": "Il codice della lingua inglese"
+    },
+    "es": "Spagnolo",
+    "@es": {
+        "description": "Il codice della lingua spagnola"
+    },
+    "fr": "Francese",
+    "@fr": {
+        "description": "Il codice della lingua francese"
+    },
+    "de": "Tedesco",
+    "@de": {
+        "description": "Il codice della lingua tedesca"
+    },
+    "it": "Italiano",
+    "@it": {
+        "description": "Il codice della lingua italiana"
+    },
+    "pt": "Portoghese",
+
+    "@pt": {
+        "description": "Il codice della lingua portoghese"
+    },
+    "ru": "Russo",
+    "@ru": {
+        "description": "Il codice della lingua russa"
+    },
+    "zh": "Cinese",
+    "@zh": {
+        "description": "Il codice della lingua cinese"
+    },
+    "ja": "Giapponese",
+    "@ja": {
+        "description": "Il codice della lingua giapponese"
+    },
+    "hi": "Hindi",
+    "@hi": {
+        "description": "Il codice della lingua hindi"
+    },
+    "kn": "Kannada",
+    "@kn": {
+        "description": "Il codice della lingua kannada"
+    },
+    "ta": "Tamil",
+    "@ta": {
+        "description": "Il codice della lingua tamil"
+    },
+    "te": "Telugu",
+    "@te": {
+        "description": "Il codice della lingua telugu"
+    },
+    "ml": "Malayalam",
+    "@ml": {
+        "description": "Il codice della lingua malayalam"
+    },
+    "ar": "Arabo",
+    "@ar": {
+        "description": "Il codice della lingua araba"
+    },
+    "nl": "Olandese",
+    "@nl": {
+        "description": "Il codice della lingua olandese"
+    },
+    "el": "Greco",
+    "@el": {
+        "description": "Il codice della lingua greca"
+    },
+    "id": "Indonesiano",
+    "@id": {
+        "description": "Il codice della lingua indonesiana"
+    },
+    "ko": "Coreano",
+    "@ko": {
+        "description": "Il codice della lingua coreana"
+    },
+    "pl": "Polacco",
+    "@pl": {
+        "description": "Il codice della lingua polacca"
+    },
+    "ro": "Rumeno",
+    "@ro": {
+        "description": "Il codice della lingua rumena"
+    },
+    "tr": "Turco",
+    "@tr": {
+        "description": "Il codice della lingua turca"
+    }
+}
