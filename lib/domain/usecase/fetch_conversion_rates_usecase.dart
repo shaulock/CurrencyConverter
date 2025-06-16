@@ -1,12 +1,12 @@
 import 'package:currency_converter/data/repository/fetch_conversion_rates_repository.dart';
 import 'package:currency_converter/data/request/conversion_rates_from_base_currency_request.dart';
 import 'package:currency_converter/domain/repository/fetch_conversion_rates_repository.dart';
-import 'package:currency_converter/utils/constants/format_constants.dart';
 import 'package:currency_converter/utils/constants/theme_constants.dart';
 import 'package:currency_converter/utils/constants/url_constants.dart';
 import 'package:currency_converter/utils/responses/conversion_rates_from_base_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
 FetchConversionRatesRepository repository =
@@ -18,7 +18,7 @@ Future<ConversionRatesFromBaseCurrency> fetchConversionRates({
 }) async {
   String dateValue =
       date != null
-          ? FormatConstants.dateFormat.format(date)
+          ? DateFormat('yyyy-MM-dd').format(date)
           : UrlConstants.dateNow;
   String apiVersion = UrlConstants.apiVersion;
   ConversionRatesFromBaseCurrencyRequest request =
@@ -53,7 +53,7 @@ Future<ConversionRatesFromBaseCurrency> fetchConversionRates({
     );
     return ConversionRatesFromBaseCurrency(
       baseCurrency: baseCurrency,
-      dateOfRates: FormatConstants.dateFormat.parse(dateValue),
+      dateOfRates: DateFormat('yyyy-MM-dd').parse(dateValue),
       multiplicationRates: {},
     );
   }

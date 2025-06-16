@@ -1,4 +1,4 @@
-import 'package:currency_converter/utils/constants/format_constants.dart';
+import 'package:intl/intl.dart';
 
 class ConversionRatesFromBaseCurrency {
   String baseCurrency;
@@ -21,7 +21,7 @@ class ConversionRatesFromBaseCurrency {
           (value, element) => value == 'date' ? element : value,
         )],
       ),
-      dateOfRates: FormatConstants.dateFormat.parse(json['date'] as String),
+      dateOfRates: DateFormat('yyyy-MM-dd').parse(json['date'] as String),
     );
   }
 
@@ -29,7 +29,7 @@ class ConversionRatesFromBaseCurrency {
     return {
       'base_currency': baseCurrency,
       'multiplication_rates': multiplicationRates,
-      'date_of_rates': FormatConstants.dateFormat.format(dateOfRates),
+      'date_of_rates': DateFormat('yyyy-MM-dd').format(dateOfRates),
     };
   }
 }

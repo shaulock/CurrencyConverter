@@ -98,4 +98,45 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get tr => 'துருக்கி';
+
+  @override
+  String weekday(String weekday) {
+    String _temp0 = intl.Intl.selectLogic(
+      weekday,
+      {
+        'Monday': 'திங்கள்',
+        'Tuesday': 'செவ்வாய்',
+        'Wednesday': 'புதன்',
+        'Thursday': 'வியாழன்',
+        'Friday': 'வெள்ளி',
+        'Saturday': 'சனி',
+        'Sunday': 'ஞாயிறு',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String month(String month) {
+    String _temp0 = intl.Intl.selectLogic(
+      month,
+      {
+        'January': 'ஜனவரி',
+        'February': 'பிப்ரவரி',
+        'March': 'மார்ச்',
+        'April': 'ஏப்ரல்',
+        'May': 'மே',
+        'June': 'ஜூன்',
+        'July': 'ஜூலை',
+        'August': 'ஆகஸ்ட்',
+        'September': 'செப்டெம்பர்',
+        'October': 'அக்டோபர்',
+        'November': 'நவம்பர்',
+        'December': 'டிசம்பர்',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
 }

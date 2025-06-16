@@ -92,5 +92,7 @@
     "tr": "துருக்கி",
     "@tr": {
         "description": "துருக்கி மொழி குறியீடு"
-    }
+    },
+    "weekday": "{weekday, select, Monday{திங்கள்} Tuesday{செவ்வாய்} Wednesday{புதன்} Thursday{வியாழன்} Friday{வெள்ளி} Saturday{சனி} Sunday{ஞாயிறு} other{}}",
+    "month": "{month, select, January{ஜனவரி} February{பிப்ரவரி} March{மார்ச்} April{ஏப்ரல்} May{மே} June{ஜூன்} July{ஜூலை} August{ஆகஸ்ட்} September{செப்டெம்பர்} October{அக்டோபர்} November{நவம்பர்} December{டிசம்பர்} other{}}"
 }

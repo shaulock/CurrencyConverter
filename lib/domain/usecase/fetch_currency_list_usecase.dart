@@ -1,12 +1,12 @@
 import 'package:currency_converter/data/repository/fetch_currency_list_repository.dart';
 import 'package:currency_converter/data/request/currency_list_request.dart';
 import 'package:currency_converter/domain/repository/fetch_currency_list_repository.dart';
-import 'package:currency_converter/utils/constants/format_constants.dart';
 import 'package:currency_converter/utils/constants/theme_constants.dart';
 import 'package:currency_converter/utils/constants/url_constants.dart';
 import 'package:currency_converter/utils/responses/currency_list_response.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
 FetchCurrencyListRepository repository = FetchCurrencyListRepositoryImpl();
@@ -14,7 +14,7 @@ FetchCurrencyListRepository repository = FetchCurrencyListRepositoryImpl();
 Future<CurrencyListResponse> fetchCurrencyList(DateTime? date) async {
   String dateValue =
       date != null
-          ? FormatConstants.dateFormat.format(date)
+          ? DateFormat('yyyy-MM-dd').format(date)
           : UrlConstants.dateNow;
   String apiVersion = UrlConstants.apiVersion;
   CurrencyListRequest request = CurrencyListRequest(

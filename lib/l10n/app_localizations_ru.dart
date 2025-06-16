@@ -98,4 +98,45 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get tr => 'Турецкий';
+
+  @override
+  String weekday(String weekday) {
+    String _temp0 = intl.Intl.selectLogic(
+      weekday,
+      {
+        'Monday': 'Понедельник',
+        'Tuesday': 'Вторник',
+        'Wednesday': 'Среда',
+        'Thursday': 'Четверг',
+        'Friday': 'Пятница',
+        'Saturday': 'Суббота',
+        'Sunday': 'Воскресенье',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String month(String month) {
+    String _temp0 = intl.Intl.selectLogic(
+      month,
+      {
+        'January': 'Январь',
+        'February': 'Февраль',
+        'March': 'Март',
+        'April': 'Апрель',
+        'May': 'Май',
+        'June': 'Июнь',
+        'July': 'Июль',
+        'August': 'Август',
+        'September': 'Сентябрь',
+        'October': 'Октябрь',
+        'November': 'Ноябрь',
+        'December': 'Декабрь',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
 }

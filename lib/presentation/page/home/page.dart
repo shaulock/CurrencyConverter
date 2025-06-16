@@ -4,7 +4,6 @@ import 'package:currency_converter/utils/constants/theme_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
 class ChangeLanguageDialog extends StatelessWidget {
@@ -87,76 +86,6 @@ class ChangeLanguageDialog extends StatelessWidget {
                             ),
                     onTap: () {
                       languageAndFormatController.changeLanguage(language);
-                      switch (language) {
-                        case 'English':
-                          Get.updateLocale(Locale('en'));
-                          break;
-                        case 'Español':
-                          Get.updateLocale(Locale('es'));
-                          break;
-                        case 'Français':
-                          Get.updateLocale(Locale('fr'));
-                          break;
-                        case 'Deutsch':
-                          Get.updateLocale(Locale('de'));
-                          break;
-                        case 'Italiano':
-                          Get.updateLocale(Locale('it'));
-                          break;
-                        case 'Português':
-                          Get.updateLocale(Locale('pt'));
-                          break;
-                        case 'Русский':
-                          Get.updateLocale(Locale('ru'));
-                          break;
-                        case '中文':
-                          Get.updateLocale(Locale('zh'));
-                          break;
-                        case '日本語':
-                          Get.updateLocale(Locale('ja'));
-                          break;
-                        case 'हिंदी':
-                          Get.updateLocale(Locale('hi'));
-                          break;
-                        case 'తెలుగు':
-                          Get.updateLocale(Locale('te'));
-                          break;
-                        case 'தமிழ்':
-                          Get.updateLocale(Locale('ta'));
-                          break;
-                        case 'മലയാളം':
-                          Get.updateLocale(Locale('ml'));
-                          break;
-                        case 'ಕನ್ನಡ':
-                          Get.updateLocale(Locale('kn'));
-                          break;
-                        case 'العربية':
-                          Get.updateLocale(Locale('ar'));
-                          break;
-                        case 'Nederlands':
-                          Get.updateLocale(Locale('nl'));
-                          break;
-                        case 'Ελληνικά':
-                          Get.updateLocale(Locale('el'));
-                          break;
-                        case 'Bahasa Indonesia':
-                          Get.updateLocale(Locale('id'));
-                          break;
-                        case '한국어':
-                          Get.updateLocale(Locale('ko'));
-                          break;
-                        case 'Polski':
-                          Get.updateLocale(Locale('pl'));
-                          break;
-                        case 'Română':
-                          Get.updateLocale(Locale('ro'));
-                          break;
-                        case 'Türkçe':
-                          Get.updateLocale(Locale('tr'));
-                          break;
-                        default:
-                          Get.updateLocale(Locale('en'));
-                      }
                     },
                   ),
               ],
@@ -448,23 +377,132 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Text(
-                NumberFormat.simpleCurrency(
-                  name: '',
-                  locale: supportedLanguageCodes(
-                    languageAndFormatController.selectedLanguage.value,
-                  ),
-                ).format(15645465.4564),
-                style: colorController.themeData.value.textTheme.headlineMedium
-                    ?.copyWith(
-                      color:
-                          colorController
-                              .themeData
-                              .value
-                              .colorScheme
-                              .onPrimaryContainer,
-                      fontSize: ThemeConstants.titleFontSize.sp,
+              SizedBox(height: 3.h),
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: dateTimeController.weekday,
+                      style: colorController
+                          .themeData
+                          .value
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                            color:
+                                colorController
+                                    .themeData
+                                    .value
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                            fontSize: ThemeConstants.titleFontSize.sp,
+                          ),
                     ),
+                    TextSpan(
+                      text: '\n\u0000',
+                      style: colorController
+                          .themeData
+                          .value
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                            color:
+                                colorController
+                                    .themeData
+                                    .value
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                            fontSize: ThemeConstants.titleFontSize.sp,
+                          ),
+                    ),
+                    TextSpan(
+                      text: dateTimeController.month,
+                      style: colorController
+                          .themeData
+                          .value
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                            color:
+                                colorController
+                                    .themeData
+                                    .value
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                            fontSize: ThemeConstants.titleFontSize.sp,
+                          ),
+                    ),
+                    TextSpan(
+                      text: ' ',
+                      style: colorController
+                          .themeData
+                          .value
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                            color:
+                                colorController
+                                    .themeData
+                                    .value
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                            fontSize: ThemeConstants.titleFontSize.sp,
+                          ),
+                    ),
+                    TextSpan(
+                      text: dateTimeController.day,
+                      style: colorController
+                          .themeData
+                          .value
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                            color:
+                                colorController
+                                    .themeData
+                                    .value
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                            fontSize: ThemeConstants.titleFontSize.sp,
+                          ),
+                    ),
+                    TextSpan(
+                      text: ', ',
+                      style: colorController
+                          .themeData
+                          .value
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                            color:
+                                colorController
+                                    .themeData
+                                    .value
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                            fontSize: ThemeConstants.titleFontSize.sp,
+                          ),
+                    ),
+                    TextSpan(
+                      text: dateTimeController.year,
+                      style: colorController
+                          .themeData
+                          .value
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                            color:
+                                colorController
+                                    .themeData
+                                    .value
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                            fontSize: ThemeConstants.titleFontSize.sp,
+                          ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

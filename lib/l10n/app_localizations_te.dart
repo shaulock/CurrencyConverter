@@ -98,4 +98,45 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get tr => 'టర్కిష్';
+
+  @override
+  String weekday(String weekday) {
+    String _temp0 = intl.Intl.selectLogic(
+      weekday,
+      {
+        'Monday': 'సోమవారం',
+        'Tuesday': 'మంగళవారం',
+        'Wednesday': 'బుధవారం',
+        'Thursday': 'గురువారం',
+        'Friday': 'శుక్రవారం',
+        'Saturday': 'శనివారం',
+        'Sunday': 'ఆదివారం',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String month(String month) {
+    String _temp0 = intl.Intl.selectLogic(
+      month,
+      {
+        'January': 'జనవరి',
+        'February': 'ఫిబ్రవరి',
+        'March': 'మార్చి',
+        'April': 'ఏప్రిల్',
+        'May': 'మే',
+        'June': 'జూన్',
+        'July': 'జూలై',
+        'August': 'ఆగస్టు',
+        'September': 'సెప్టెంబర్',
+        'October': 'అక్టోబర్',
+        'November': 'నవంబర్',
+        'December': 'డిసెంబర్',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
 }

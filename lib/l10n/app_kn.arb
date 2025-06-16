@@ -92,5 +92,7 @@
     "tr": "ಟರ್ಕಿಷ್",
     "@tr": {
         "description": "ಟರ್ಕಿಷ್ ಭಾಷಾ ಕೋಡ್"
-    }
+    },
+    "weekday": "{weekday, select, Monday{ಸೋಮವಾರ} Tuesday{ಮಂಗಳವಾರ} Wednesday{ಬುಧವಾರ} Thursday{ಗುರುವಾರ} Friday{ಶುಕ್ರವಾರ} Saturday{ಶನಿವಾರ} Sunday{ಭಾನುವಾರ} other{}}",
+    "month": "{month, select, January{ಜನವರಿ} February{ಫೆಬ್ರವರಿ} March{ಮಾರ್ಚ್} April{ಏಪ್ರಿಲ್} May{ಮೇ} June{ಜೂನ್} July{ಜುಲೈ} August{ಆಗಸ್ಟ್} September{ಸೆಪ್ಟೆಂಬರ್} October{ಅಕ್ಟೋಬರ್} November{ನವೆಂಬರ್} December{ಡಿಸೆಂಬರ್} other{}}"
 }

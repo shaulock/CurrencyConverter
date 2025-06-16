@@ -296,6 +296,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Turkish'**
   String get tr;
+
+  /// A placeholder for the day of the week, where {weekday} is replaced with the actual day name
+  ///
+  /// In en, this message translates to:
+  /// **'{weekday, select, Monday{Monday} Tuesday{Tuesday} Wednesday{Wednesday} Thursday{Thursday} Friday{Friday} Saturday{Saturday} Sunday{Sunday} other{}}'**
+  String weekday(String weekday);
+
+  /// A placeholder for the month, where {month} is replaced with the actual month name
+  ///
+  /// In en, this message translates to:
+  /// **'{month, select, January{January} February{February} March{March} April{April} May{May} June{June} July{July} August{August} September{September} October{October} November{November} December{December} other{}}'**
+  String month(String month);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

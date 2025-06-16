@@ -92,5 +92,7 @@
     "tr": "టర్కిష్",
     "@tr": {
         "description": "టర్కిష్ భాషా కోడ్"
-    }
+    },
+    "weekday": "{weekday, select, Monday{సోమవారం} Tuesday{మంగళవారం} Wednesday{బుధవారం} Thursday{గురువారం} Friday{శుక్రవారం} Saturday{శనివారం} Sunday{ఆదివారం} other{}}",
+    "month": "{month, select, January{జనవరి} February{ఫిబ్రవరి} March{మార్చి} April{ఏప్రిల్} May{మే} June{జూన్} July{జూలై} August{ఆగస్టు} September{సెప్టెంబర్} October{అక్టోబర్} November{నవంబర్} December{డిసెంబర్} other{}}"
 }

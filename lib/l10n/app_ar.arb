@@ -92,5 +92,7 @@
     "tr": "التركية",
     "@tr": {
         "description": "رمز اللغة التركية"
-    }
+    },
+    "weekday": "{weekday, select, Monday{الإثنين} Tuesday{الثلاثاء} Wednesday{الأربعاء} Thursday{الخميس} Friday{الجمعة} Saturday{السبت} Sunday{الأحد} other{}}",
+    "month": "{month, select, January{يناير} February{فبراير} March{مارس} April{أبريل} May{مايو} June{يونيو} July{يوليو} August{أغسطس} September{سبتمبر} October{أكتوبر} November{نوفمبر} December{ديسمبر} other{}}"
 }

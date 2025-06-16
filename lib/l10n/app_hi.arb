@@ -92,5 +92,7 @@
     "tr": "तुर्की",
     "@tr": {
         "description": "तुर्की भाषा का कोड"
-    }
+    },
+    "weekday": "{weekday, select, Monday{सोमवार} Tuesday{मंगलवार} Wednesday{बुधवार} Thursday{गुरूवार} Friday{शुक्रवार} Saturday{शनिवार} Sunday{रविवार} other{}}",
+    "month": "{month, select, January{जनवरी} February{फ़रवरी} March{मार्च} April{अप्रैल} May{मई} June{जून} July{जुलाई} August{अगस्त} September{सितंबर} October{अक्टूबर} November{नवंबर} December{दिसंबर} other{}}"
 }

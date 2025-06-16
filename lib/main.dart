@@ -2,13 +2,21 @@ import 'package:currency_converter/l10n/app_localizations.dart';
 import 'package:currency_converter/presentation/page/home/page.dart';
 import 'package:currency_converter/utils/constants/constants_base.dart';
 import 'package:currency_converter/utils/injections.dart';
+import 'package:currency_converter/utils/local_storage/conversion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sizer/sizer.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(ConversionAdapter());
+  await settings.init();
+  await favorites.init();
+  await history.init();
+
   injectControllers();
   runApp(Root());
 }
@@ -17,6 +25,11 @@ class Root extends StatelessWidget {
   const Root({super.key});
   @override
   Widget build(BuildContext context) {
+    String language = settings.getLanguage();
+    if (language.isEmpty) {
+      language = 'English'; // Default to English if no language is set
+      settings.saveLanguage(language);
+    }
     return Sizer(
       builder: (context, orientation, screenType) {
         return Obx(

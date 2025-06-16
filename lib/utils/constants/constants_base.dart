@@ -1,12 +1,20 @@
 import 'package:currency_converter/l10n/app_localizations.dart';
+import 'package:currency_converter/presentation/controller/home/date_time_controller.dart';
 import 'package:currency_converter/presentation/controller/settings/color_controller.dart';
 import 'package:currency_converter/presentation/controller/settings/language_and_format_controller.dart';
+import 'package:currency_converter/utils/local_storage/favorites.dart';
+import 'package:currency_converter/utils/local_storage/history.dart';
+import 'package:currency_converter/utils/local_storage/settings.dart';
 import 'package:get/get.dart';
 
 final ColorController colorController = Get.find(tag: 'color');
-final LanguageAndFormatController languageAndFormatController = Get.find(
-  tag: 'language_and_format',
+final LanguageController languageAndFormatController = Get.find(
+  tag: 'language',
 );
+final DateTimeController dateTimeController = Get.find(tag: 'date_time');
+final Favorites favorites = Favorites();
+final Settings settings = Settings();
+final History history = History();
 
 List<String> supportedLanguages = [
   'English',

@@ -98,4 +98,45 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tr => 'التركية';
+
+  @override
+  String weekday(String weekday) {
+    String _temp0 = intl.Intl.selectLogic(
+      weekday,
+      {
+        'Monday': 'الإثنين',
+        'Tuesday': 'الثلاثاء',
+        'Wednesday': 'الأربعاء',
+        'Thursday': 'الخميس',
+        'Friday': 'الجمعة',
+        'Saturday': 'السبت',
+        'Sunday': 'الأحد',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String month(String month) {
+    String _temp0 = intl.Intl.selectLogic(
+      month,
+      {
+        'January': 'يناير',
+        'February': 'فبراير',
+        'March': 'مارس',
+        'April': 'أبريل',
+        'May': 'مايو',
+        'June': 'يونيو',
+        'July': 'يوليو',
+        'August': 'أغسطس',
+        'September': 'سبتمبر',
+        'October': 'أكتوبر',
+        'November': 'نوفمبر',
+        'December': 'ديسمبر',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
 }

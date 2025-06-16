@@ -1,15 +1,20 @@
+import 'package:currency_converter/utils/constants/constants_base.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ColorController extends GetxController {
-  Rx<Color> seedColor = Color.fromARGB(255, 33, 131, 144).obs;
+  late Rx<Color> seedColor;
   late Rx<ThemeData> themeData;
   late Rx<ThemeMode> themeMode;
   @override
   void onInit() {
     super.onInit();
-    themeMode = ThemeMode.light.obs;
+    seedColor = settings.getThemeColor().obs;
+    themeMode =
+        settings.getThemeMode() == Brightness.dark
+            ? ThemeMode.dark.obs
+            : ThemeMode.light.obs;
     themeData =
         ThemeData.from(
           colorScheme: ColorScheme.fromSeed(
@@ -36,6 +41,8 @@ class ColorController extends GetxController {
     );
     Get.changeTheme(themeData.value);
     Get.changeThemeMode(themeMode.value);
+    settings.saveThemeColor(newColor);
+    settings.saveThemeMode(isDark ? Brightness.dark : Brightness.light);
   }
 
   void changeBrightness() {
@@ -50,5 +57,7 @@ class ColorController extends GetxController {
     );
     Get.changeTheme(themeData.value);
     Get.changeThemeMode(themeMode.value);
+    settings.saveThemeMode(isDark ? Brightness.dark : Brightness.light);
+    settings.saveThemeColor(seedColor.value);
   }
 }

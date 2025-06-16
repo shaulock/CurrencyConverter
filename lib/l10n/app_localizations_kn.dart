@@ -98,4 +98,45 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get tr => 'ಟರ್ಕಿಷ್';
+
+  @override
+  String weekday(String weekday) {
+    String _temp0 = intl.Intl.selectLogic(
+      weekday,
+      {
+        'Monday': 'ಸೋಮವಾರ',
+        'Tuesday': 'ಮಂಗಳವಾರ',
+        'Wednesday': 'ಬುಧವಾರ',
+        'Thursday': 'ಗುರುವಾರ',
+        'Friday': 'ಶುಕ್ರವಾರ',
+        'Saturday': 'ಶನಿವಾರ',
+        'Sunday': 'ಭಾನುವಾರ',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String month(String month) {
+    String _temp0 = intl.Intl.selectLogic(
+      month,
+      {
+        'January': 'ಜನವರಿ',
+        'February': 'ಫೆಬ್ರವರಿ',
+        'March': 'ಮಾರ್ಚ್',
+        'April': 'ಏಪ್ರಿಲ್',
+        'May': 'ಮೇ',
+        'June': 'ಜೂನ್',
+        'July': 'ಜುಲೈ',
+        'August': 'ಆಗಸ್ಟ್',
+        'September': 'ಸೆಪ್ಟೆಂಬರ್',
+        'October': 'ಅಕ್ಟೋಬರ್',
+        'November': 'ನವೆಂಬರ್',
+        'December': 'ಡಿಸೆಂಬರ್',
+        'other': '',
+      },
+    );
+    return '$_temp0';
+  }
 }
