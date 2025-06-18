@@ -50,6 +50,9 @@ class Root extends StatelessWidget {
               // Fallback to English for built-in widgets
               return const Locale('en');
             },
+            builder: (context, child) {
+              return MediaQuery.withNoTextScaling(child: child!);
+            },
             title: 'Currency Converter',
             theme: colorController.themeData.value,
             themeMode: colorController.themeMode.value,

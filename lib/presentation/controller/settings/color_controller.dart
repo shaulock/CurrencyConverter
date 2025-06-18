@@ -38,6 +38,7 @@ class ColorController extends GetxController {
         seedColor: newColor,
         brightness: isDark ? Brightness.dark : Brightness.light,
       ),
+      textTheme: GoogleFonts.montserratTextTheme(),
     );
     Get.changeTheme(themeData.value);
     Get.changeThemeMode(themeMode.value);
@@ -54,6 +55,7 @@ class ColorController extends GetxController {
         seedColor: seedColor.value,
         brightness: isDark ? Brightness.dark : Brightness.light,
       ),
+      textTheme: GoogleFonts.montserratTextTheme(),
     );
     Get.changeTheme(themeData.value);
     Get.changeThemeMode(themeMode.value);

@@ -65,7 +65,7 @@
         "description": "رمز اللغة الهولندية"
     },
     "language": "العربية",
-    "helloWorld": "مرحبا بالعالم!",
+    "currencyConverter": "محول العملة",
     "changeThemeMode": "{mode, select, light{الفاتح} dark{الداكن} other{النظام}} التبديل إلى الوضع",
     "changeLanguage": "تغيير اللغة",
     "changeThemeColor": "تغيير لون السمة",
@@ -94,5 +94,7 @@
         "description": "رمز اللغة التركية"
     },
     "weekday": "{weekday, select, Monday{الإثنين} Tuesday{الثلاثاء} Wednesday{الأربعاء} Thursday{الخميس} Friday{الجمعة} Saturday{السبت} Sunday{الأحد} other{}}",
-    "month": "{month, select, January{يناير} February{فبراير} March{مارس} April{أبريل} May{مايو} June{يونيو} July{يوليو} August{أغسطس} September{سبتمبر} October{أكتوبر} November{نوفمبر} December{ديسمبر} other{}}"
+    "month": "{month, select, January{يناير} February{فبراير} March{مارس} April{أبريل} May{مايو} June{يونيو} July{يوليو} August{أغسطس} September{سبتمبر} October{أكتوبر} November{نوفمبر} December{ديسمبر} other{}}",
+    "favourites": "المفضلة",
+    "history": "السجل"
 }

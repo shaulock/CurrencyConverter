@@ -1,9 +1,11 @@
 {
     "@@locale": "pt",
-    "helloWorld": "Olá, mundo!",
+    "currencyConverter": "Conversor de Moeda",
     "changeThemeColor": "Alterar cor do tema",
     "changeThemeMode": "Mudar para o modo {mode, select, light{Light} dark{Escuro} other{Sistema}}",
     "changeLanguage": "Alterar idioma",
+    "favourites": "Favoritos",
+    "history": "Histórico",
     "language": "Português",
     "en": "Inglês",
     "@en": {

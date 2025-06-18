@@ -1,10 +1,12 @@
 {
     "@@locale": "ta",
-    "helloWorld": "வணக்கம் உலகம்!",
+    "currencyConverter": "நாணய மாற்றி",
     "changeThemeColor": "தீம் நிறத்தை மாற்று",
     "changeThemeMode":"{mode, select, light{ஒளி} dark{இருண்ட} other{சிஸ்டம்}} பயன்முறைக்கு மாறவும்",
     "changeLanguage": "மொழியை மாற்று",
     "language":"தமிழ்",
+    "favourites": "பிரியமானவை",
+    "history": "வரலாறு",
     "en": "ஆங்கிலம்",
     "@en": {
         "description": "ஆங்கில மொழி குறியீடு"

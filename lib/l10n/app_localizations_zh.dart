@@ -9,7 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get helloWorld => '你好世界!';
+  String get currencyConverter => '货币转换器';
 
   @override
   String get changeThemeColor => '更改主题颜色';
@@ -139,4 +139,10 @@ class AppLocalizationsZh extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => '收藏夹';
+
+  @override
+  String get history => '历史';
 }

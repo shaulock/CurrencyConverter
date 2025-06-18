@@ -3,9 +3,11 @@
     "changeThemeMode": "Przełącz na tryb {mode, select, light{jasny} dark{ciemny} other{systemowy}}",
     "changeThemeColor": "Zmień kolor motywu",
     "changeLanguage": "Zmień język",
-    "helloWorld": "Witaj świecie!",
+    "currencyConverter": "Kalkulator walut",
     "language": "Polski",
     "en": "Angielski",
+    "favourites": "Ulubione",
+    "history": "Historia",
     "@en": {
         "description": "Kod języka dla angielskiego"
     },

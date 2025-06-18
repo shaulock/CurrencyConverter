@@ -1,6 +1,6 @@
 {
     "@@locale": "el",
-    "helloWorld": "Γεια σου κόσμε!",
+    "currencyConverter": "Μετατροπέας νομισμάτων",
     "changeThemeColor": "Αλλαγή χρώματος θέματος",
     "changeThemeMode": "Μετάβαση σε λειτουργία {mode, select, light{Φωτεινού} dark{Σκότους} other{Συστήματος}}",
     "changeLanguage": "Αλλαγή γλώσσας",
@@ -93,6 +93,8 @@
     "@tr": {
         "description": "Κωδικός γλώσσας για τα Τουρκικά"
     },
+    "favourites": "Αγαπημένα",
+    "history": "Ιστορικό",
     "weekday": "{weekday, select, Monday{Δευτέρα} Tuesday{Τρίτη} Wednesday{Τετάρτη} Thursday{Πέμπτη} Friday{Παρασκευή} Saturday{Σάββατο} Sunday{Κυριακή} other{}}",
     "month": "{month, select, January{Ιανουάριος} February{Φεβρουάριος} March{Μάρτιος} April{Απρίλιος} May{Μάιος} June{Ιούνιος} July{Ιούλιος} August{Αύγουστος} September{Σεπτέμβριος} October{Οκτώβριος} November{Νοέμβριος} December{Δεκέμβριος} other{}}"
 }

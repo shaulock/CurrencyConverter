@@ -9,7 +9,7 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get helloWorld => 'Привет, мир!';
+  String get currencyConverter => 'Конвертер валют';
 
   @override
   String get changeThemeColor => 'Изменить цвет темы';
@@ -139,4 +139,10 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'Избранное';
+
+  @override
+  String get history => 'История';
 }

@@ -1,10 +1,12 @@
 {
     "@@locale": "nl",
     "language": "Nederlands",
-    "helloWorld": "Hallo Wereld!",
+    "currencyConverter": "Valuta Omzetter",
     "changeThemeColor": "Themakleur wijzigen",
     "changeThemeMode": "Overschakelen naar de {mode, select, light{lichte } dark{donkere } other{systeem}}modus",
     "changeLanguage": "Taal wijzigen",
+    "favourites": "Favorieten",
+    "history": "Geschiedenis",
     "en": "Engels",
     "@en": {
         "description": "Taalcode voor Engels"

@@ -1,11 +1,13 @@
 {
     "@@locale": "id",
-    "helloWorld": "Halo Dunia!",
+    "currencyConverter": "Konverter Mata Uang",
     "changeThemeColor": "Ubah Warna Tema",
     "changeThemeMode": "Beralih ke mode {mode, select, light{Terang} dark{Gelap} other{Sistem}}",
     "changeLanguage": "Ubah Bahasa",
     "language": "Bahasa Indonesia",
     "en": "Inggris",
+    "favourites": "Favorit",
+    "history": "Riwayat",
     "@en": {
         "description": "Kode bahasa untuk bahasa Inggris"
     },

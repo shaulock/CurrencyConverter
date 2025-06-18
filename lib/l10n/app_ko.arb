@@ -3,9 +3,11 @@
     "changeLanguage": "언어 변경",
     "changeThemeColor": "테마 색상 변경",
     "changeThemeMode": "{mode, select, light{밝은} dark{어두운} other{시스템}} 모드로 전환",
-    "helloWorld": "안녕하세요!",
+    "currencyConverter": "통화 변환기",
     "language": "한국어",
     "en": "영어",
+    "favourites": "즐겨찾기",
+    "history": "기록",
     "@en": {
         "description": "영어 언어 코드"
     },

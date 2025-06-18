@@ -9,7 +9,7 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get helloWorld => '「こんにちは世界」';
+  String get currencyConverter => '通貨コンバーター';
 
   @override
   String get changeThemeColor => 'テーマカラーを変更する';
@@ -139,4 +139,10 @@ class AppLocalizationsJa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'お気に入り';
+
+  @override
+  String get history => '履歴';
 }

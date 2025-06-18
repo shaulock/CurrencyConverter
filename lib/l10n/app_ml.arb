@@ -1,11 +1,13 @@
 {
     "@@locale": "ml",
-    "helloWorld": "നമസ്കാരം ലോകമേ!",
+    "currencyConverter": "വിനിമയ കറൻസി",
     "changeThemeColor": "തീം നിറം മാറ്റുക",
     "changeThemeMode":"{mode, select, light{ലൈറ്റ്} dark{ഡാർക്ക്} other{സിസ്റ്റം}} മോഡിലേക്ക് മാറുക",
     "changeLanguage": "ഭാഷ മാറ്റുക",
     "language":"മലയാളം",
     "en": "ഇംഗ്ലീഷ്",
+    "favourites": "പ്രിയപ്പെട്ടവ",
+    "history": "ചരിത്രം",
     "@en": {
         "description": "ഇംഗ്ലീഷ് ഭാഷാ കോഡ്"
     },

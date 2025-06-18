@@ -1,11 +1,13 @@
 {
     "@@locale": "es",
-    "helloWorld": "¡Hola Mundo!",
+    "currencyConverter": "Convertidor de Divisas",
     "changeThemeColor": "Cambiar el color del tema",
     "changeThemeMode": "Cambiar al modo {mode, select, light{Claro} dark{Oscuro} other{Sistema}}",
     "changeLanguage": "Cambiar idioma",
     "language": "Español",
     "en": "Inglés",
+    "favourites": "Favoritos",
+    "history": "Historial",
     "@en": {
         "description": "El código del idioma inglés"
     },

@@ -9,7 +9,7 @@ class AppLocalizationsMl extends AppLocalizations {
   AppLocalizationsMl([String locale = 'ml']) : super(locale);
 
   @override
-  String get helloWorld => 'നമസ്കാരം ലോകമേ!';
+  String get currencyConverter => 'വിനിമയ കറൻസി';
 
   @override
   String get changeThemeColor => 'തീം നിറം മാറ്റുക';
@@ -139,4 +139,10 @@ class AppLocalizationsMl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'പ്രിയപ്പെട്ടവ';
+
+  @override
+  String get history => 'ചരിത്രം';
 }

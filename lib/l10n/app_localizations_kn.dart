@@ -9,7 +9,7 @@ class AppLocalizationsKn extends AppLocalizations {
   AppLocalizationsKn([String locale = 'kn']) : super(locale);
 
   @override
-  String get helloWorld => 'ನಮಸ್ಕಾರ ವಿಶ್ವವೆ!';
+  String get currencyConverter => 'ಕರೆನ್ಸಿ ಪರಿವರ್ತಕ';
 
   @override
   String get changeThemeColor => 'ಥೀಮ್ ಮೋಡ್ ಬದಲಾಯಿಸಿ';
@@ -139,4 +139,10 @@ class AppLocalizationsKn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'ಮೆಚ್ಚಿನವುಗಳು';
+
+  @override
+  String get history => 'ಇತಿಹಾಸ';
 }

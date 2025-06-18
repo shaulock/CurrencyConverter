@@ -1,10 +1,12 @@
 {
     "@@locale": "ja",
-    "helloWorld": "「こんにちは世界」",
+    "currencyConverter": "通貨コンバーター",
     "changeThemeColor": "テーマカラーを変更する",
     "changeThemeMode": "モードに切り替える {mode, select, light{ライト} dark{ダーク} other{システム}}",
     "changeLanguage": "言語を変更",
     "language": "日本語",
+    "favourites": "お気に入り",
+    "history": "履歴",
     "en": "英語",
     "@en": {
         "description": "英語の言語コード"

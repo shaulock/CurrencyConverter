@@ -19,19 +19,17 @@ class ConversionAdapter extends TypeAdapter<Conversion> {
     return Conversion(
       fromCurrency: fields[0] as String,
       toCurrency: fields[1] as String,
-    )..conversionKey = fields[2] as String;
+    );
   }
 
   @override
   void write(BinaryWriter writer, Conversion obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(2)
       ..writeByte(0)
       ..write(obj.fromCurrency)
       ..writeByte(1)
-      ..write(obj.toCurrency)
-      ..writeByte(2)
-      ..write(obj.conversionKey);
+      ..write(obj.toCurrency);
   }
 
   @override

@@ -1,9 +1,11 @@
 {
     "@@locale": "zh",
-    "helloWorld": "你好世界!",
+    "currencyConverter": "货币转换器",
     "changeThemeColor": "更改主题颜色",
     "changeThemeMode": "切换到{mode, select, light{亮色} dark{暗色} other{系统}}模式",
     "changeLanguage": "更改语言",
+    "favourites": "收藏夹",
+    "history": "历史",
     "language": "中文",
     "en": "英语",
     "@en": {

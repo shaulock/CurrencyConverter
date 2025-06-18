@@ -9,7 +9,7 @@ class AppLocalizationsNl extends AppLocalizations {
   AppLocalizationsNl([String locale = 'nl']) : super(locale);
 
   @override
-  String get helloWorld => 'Hallo Wereld!';
+  String get currencyConverter => 'Valuta Omzetter';
 
   @override
   String get changeThemeColor => 'Themakleur wijzigen';
@@ -139,4 +139,10 @@ class AppLocalizationsNl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'Favorieten';
+
+  @override
+  String get history => 'Geschiedenis';
 }

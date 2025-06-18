@@ -9,7 +9,7 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get helloWorld => '안녕하세요!';
+  String get currencyConverter => '통화 변환기';
 
   @override
   String get changeThemeColor => '테마 색상 변경';
@@ -139,4 +139,10 @@ class AppLocalizationsKo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => '즐겨찾기';
+
+  @override
+  String get history => '기록';
 }

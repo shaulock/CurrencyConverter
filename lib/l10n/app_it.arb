@@ -1,11 +1,13 @@
 {
     "@@locale": "it",
-    "helloWorld": "Ciao mondo!",
+    "currencyConverter": "Convertitore di valuta",
     "changeThemeColor": "Cambia colore del tema",
     "changeThemeMode": "Passa alla modalità {mode, select, light{chiara} dark{scura} other{di sistema}}",
     "changeLanguage": "Cambia lingua",
     "language": "Italiano",
     "en": "Inglese",
+    "favourites": "Preferiti",
+    "history": "Cronologia",
     "@en": {
         "description": "Il codice della lingua inglese"
     },

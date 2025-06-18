@@ -135,11 +135,11 @@ abstract class AppLocalizations {
     Locale('zh')
   ];
 
-  /// The conventional newborn programmer greeting
+  /// The title of the application
   ///
   /// In en, this message translates to:
-  /// **'Hello World!'**
-  String get helloWorld;
+  /// **'Currency Converter'**
+  String get currencyConverter;
 
   /// Text for changing the theme color in the app
   ///
@@ -308,6 +308,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{month, select, January{January} February{February} March{March} April{April} May{May} June{June} July{July} August{August} September{September} October{October} November{November} December{December} other{}}'**
   String month(String month);
+
+  /// The title for the favourites section in the app
+  ///
+  /// In en, this message translates to:
+  /// **'Favourites'**
+  String get favourites;
+
+  /// The title for the history section in the app
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get history;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

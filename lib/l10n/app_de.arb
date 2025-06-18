@@ -1,6 +1,6 @@
 {
     "@@locale": "de",
-    "helloWorld": "Hallo Welt!",
+    "currencyConverter": "Währungswandler",
     "changeThemeColor": "Designfarbe ändern",
     "changeThemeMode": "In den {mode, select, light{Hell} dark{Dunkel} other{System}}modus wechseln",
     "changeLanguage": "Sprache ändern",
@@ -93,6 +93,8 @@
     "@tr": {
         "description": "Der türkische Sprachcode"
     },
+    "favourites": "Favoriten",
+    "history": "Geschichte",
     "weekday": "{weekday, select, Monday{Montag} Tuesday{Dienstag} Wednesday{Mittwoch} Thursday{Donnerstag} Friday{Freitag} Saturday{Samstag} Sunday{Sonntag} other{}}",
     "month": "{month, select, January{Januar} February{Februar} March{März} April{April} May{Mai} June{Juni} July{Juli} August{August} September{September} October{Oktober} November{November} December{Dezember} other{}}"
 }

@@ -1,6 +1,7 @@
 import 'package:currency_converter/domain/usecase/fetch_conversion_rates_usecase.dart';
 import 'package:currency_converter/domain/usecase/fetch_currency_list_usecase.dart';
 import 'package:currency_converter/utils/constants/constants_base.dart';
+import 'package:currency_converter/utils/local_storage/conversion.dart';
 import 'package:currency_converter/utils/widgets/snackbar.dart';
 import 'package:currency_picker/currency_picker.dart';
 import 'package:get/get.dart';
@@ -12,9 +13,45 @@ class ConversionController extends GetxController {
   late RxDouble toAmount;
   late RxBool isLoading;
   late RxDouble rate;
+  late RxBool isFavorite;
+  late Rx<Conversion> conversion;
+  late RxList<Conversion> favourites;
+  late RxList<Conversion> histories;
 
   double get fromAmountDouble => fromAmount.value / 100;
   double get toAmountDouble => toAmount.value / 100;
+
+  void swapCurrencies() {
+    var temp = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = temp;
+
+    // Swap amounts based on the current rate
+    double tempAmount = fromAmount.value;
+    fromAmount.value = toAmount.value;
+    toAmount.value = tempAmount;
+  }
+
+  bool isConversionInFavourites() {
+    return favorites.isFavorite(conversion.value);
+  }
+
+  void addFavorite() async {
+    isFavorite.value = true;
+    await favorites.addFavorite(conversion.value);
+    favourites.value = favorites.getFavorites();
+  }
+
+  void removeFavoriteFromConversion(Conversion conversion) async {
+    await favorites.removeFavorite(conversion);
+    isFavorite.value = isConversionInFavourites();
+  }
+
+  void removeFavorite() async {
+    isFavorite.value = false;
+    await favorites.removeFavorite(conversion.value);
+    favourites.value = favorites.getFavorites();
+  }
 
   @override
   void onInit() {
@@ -27,7 +64,24 @@ class ConversionController extends GetxController {
     fromCurrency =
         CurrencyService().findByCode(lastInHistory.fromCurrency)!.obs;
     toCurrency = CurrencyService().findByCode(lastInHistory.toCurrency)!.obs;
+    if (fromCurrency.value.code.compareTo(toCurrency.value.code) < 0) {
+      conversion =
+          Conversion(
+            fromCurrency: fromCurrency.value.code,
+            toCurrency: toCurrency.value.code,
+          ).obs;
+    } else {
+      conversion =
+          Conversion(
+            fromCurrency: toCurrency.value.code,
+            toCurrency: fromCurrency.value.code,
+          ).obs;
+    }
+    isFavorite = isConversionInFavourites().obs;
+    histories = history.getHistory().obs;
+    favourites = favorites.getFavorites().obs;
     fetchFirst();
+    history.addHistory(conversion.value);
   }
 
   fetchFirst() async {
@@ -71,6 +125,20 @@ class ConversionController extends GetxController {
       await fetchRate();
       fromAmount.value = toAmount.value / rate.value;
     }
+    if (fromCurrency.value.code.compareTo(toCurrency.value.code) < 0) {
+      conversion.value = Conversion(
+        fromCurrency: fromCurrency.value.code,
+        toCurrency: toCurrency.value.code,
+      );
+    } else {
+      conversion.value = Conversion(
+        fromCurrency: toCurrency.value.code,
+        toCurrency: fromCurrency.value.code,
+      );
+    }
+    isFavorite.value = isConversionInFavourites();
+    await history.addHistory(conversion.value);
+    histories.value = history.getHistory();
   }
 
   Future<void> setToCurrency(Currency currency) async {
@@ -84,5 +152,19 @@ class ConversionController extends GetxController {
       await fetchRate();
       toAmount.value = fromAmount.value * rate.value;
     }
+    if (fromCurrency.value.code.compareTo(toCurrency.value.code) < 0) {
+      conversion.value = Conversion(
+        fromCurrency: fromCurrency.value.code,
+        toCurrency: toCurrency.value.code,
+      );
+    } else {
+      conversion.value = Conversion(
+        fromCurrency: toCurrency.value.code,
+        toCurrency: fromCurrency.value.code,
+      );
+    }
+    isFavorite.value = isConversionInFavourites();
+    await history.addHistory(conversion.value);
+    histories.value = history.getHistory();
   }
 }

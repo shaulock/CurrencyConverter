@@ -1,8 +1,8 @@
 {
     "@@locale": "en",
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-        "description": "The conventional newborn programmer greeting"
+    "currencyConverter": "Currency Converter",
+    "@currencyConverter": {
+        "description": "The title of the application"
     },
     "changeThemeColor": "Change Theme Color",
     "@changeThemeColor": {
@@ -130,5 +130,13 @@
                 "type": "String"
             }
         }
+    },
+    "favourites": "Favourites",
+    "@favourites": {
+        "description": "The title for the favourites section in the app"
+    },
+    "history": "History",
+    "@history": {
+        "description": "The title for the history section in the app"
     }
 }

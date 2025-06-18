@@ -1,10 +1,12 @@
 {
     "@@locale": "kn",
-    "helloWorld": "ನಮಸ್ಕಾರ ವಿಶ್ವವೆ!",
+    "currencyConverter": "ಕರೆನ್ಸಿ ಪರಿವರ್ತಕ",
     "changeThemeColor": "ಥೀಮ್ ಮೋಡ್ ಬದಲಾಯಿಸಿ",
     "changeThemeMode":"{mode, select, light{ಲೈಟ್} dark{ಡಾರ್ಕ್} other{ಸಿಸ್ಟಮ್}} ಮೋಡ್‌ಗೆ ಬದಲಿಸಿ",
     "changeLanguage": "ಭಾಷೆಯನ್ನು ಬದಲಾಯಿಸಿ",
     "language":"ಕನ್ನಡ",
+    "favourites": "ಮೆಚ್ಚಿನವುಗಳು",
+    "history": "ಇತಿಹಾಸ",
     "en": "ಇಂಗ್ಲಿಷ್",
     "@en": {
         "description": "ಇಂಗ್ಲಿಷ್ ಭಾಷಾ ಕೋಡ್"

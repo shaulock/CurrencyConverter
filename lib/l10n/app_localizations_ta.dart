@@ -9,7 +9,7 @@ class AppLocalizationsTa extends AppLocalizations {
   AppLocalizationsTa([String locale = 'ta']) : super(locale);
 
   @override
-  String get helloWorld => 'வணக்கம் உலகம்!';
+  String get currencyConverter => 'நாணய மாற்றி';
 
   @override
   String get changeThemeColor => 'தீம் நிறத்தை மாற்று';
@@ -139,4 +139,10 @@ class AppLocalizationsTa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'பிரியமானவை';
+
+  @override
+  String get history => 'வரலாறு';
 }

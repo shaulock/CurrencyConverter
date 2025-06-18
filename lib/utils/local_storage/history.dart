@@ -6,7 +6,15 @@ class History {
 
   List<Conversion> getHistory() {
     final box = Hive.box<Conversion>(_historyKey);
-    return box.values.toList();
+    var last = box.get('last');
+    if (last != null) {
+      box.delete('last');
+    }
+    var values = box.values.toList();
+    if (last != null) {
+      box.put('last', last);
+    }
+    return values;
   }
 
   Future<void> addHistory(Conversion conversion) async {
@@ -15,7 +23,8 @@ class History {
       await box.put(conversion.conversionKey, conversion);
     } else if (box.length >= 20) {
       // If history is full, remove the oldest entry
-      final oldestKey = box.keys.first;
+      final oldestKey = box.get('last')?.conversionKey ?? '';
+      if (oldestKey.isEmpty) return;
       await box.delete(oldestKey);
       await box.put(conversion.conversionKey, conversion);
     }

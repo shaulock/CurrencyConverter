@@ -1,10 +1,12 @@
 {
     "@@locale": "hi",
-    "helloWorld": "नमस्ते दुनिया!",
+    "currencyConverter": "मुद्रा परिवर्तक",
     "changeThemeColor": "रूप रंग बदलें",
     "changeThemeMode":"{mode, select, light{प्रकाश} dark{अंधकार} other{प्रणाली}} स्थिति चुनें",
     "changeLanguage": "भाषा बदलें",
     "language":"हिंदी",
+    "favourites": "पसंदीदा",
+    "history": "इतिहास",
     "en": "अंग्रेज़ी",
     "@en": {
         "description": "अंग्रेज़ी भाषा का कोड"

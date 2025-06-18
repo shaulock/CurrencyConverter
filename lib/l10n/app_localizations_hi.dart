@@ -9,7 +9,7 @@ class AppLocalizationsHi extends AppLocalizations {
   AppLocalizationsHi([String locale = 'hi']) : super(locale);
 
   @override
-  String get helloWorld => 'नमस्ते दुनिया!';
+  String get currencyConverter => 'मुद्रा परिवर्तक';
 
   @override
   String get changeThemeColor => 'रूप रंग बदलें';
@@ -139,4 +139,10 @@ class AppLocalizationsHi extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'पसंदीदा';
+
+  @override
+  String get history => 'इतिहास';
 }

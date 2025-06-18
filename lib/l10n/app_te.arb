@@ -1,10 +1,12 @@
 {
     "@@locale": "te",
-    "helloWorld": "నమస్తే ప్రపంచం!",
+    "currencyConverter": "కరెన్సీ కన్వర్టర్",
     "changeThemeColor": "థీమ్ రంగు మార్చండి",
     "changeThemeMode":"{mode, select, light{లైట్} dark{డార్క్} other{సిస్టమ్}} మోడ్‌కి మారండి",
     "changeLanguage": "భాషను మార్చండి",
     "language":"తెలుగు",
+    "favourites": "ప్రియమైనవి",
+    "history": "చరిత్ర",
     "en": "ఇంగ్లీష్",
     "@en": {
         "description": "ఇంగ్లీష్ భాషా కోడ్"

@@ -9,7 +9,7 @@ class AppLocalizationsId extends AppLocalizations {
   AppLocalizationsId([String locale = 'id']) : super(locale);
 
   @override
-  String get helloWorld => 'Halo Dunia!';
+  String get currencyConverter => 'Konverter Mata Uang';
 
   @override
   String get changeThemeColor => 'Ubah Warna Tema';
@@ -139,4 +139,10 @@ class AppLocalizationsId extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get favourites => 'Favorit';
+
+  @override
+  String get history => 'Riwayat';
 }

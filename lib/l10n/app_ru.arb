@@ -1,10 +1,12 @@
 {
     "@@locale": "ru",
-    "helloWorld": "Привет, мир!",
+    "currencyConverter": "Конвертер валют",
     "changeThemeColor": "Изменить цвет темы",
     "changeThemeMode": "Переключиться в {mode, select, light{светлый} dark{темный} other{системный}} режим",
     "changeLanguage": "Изменить язык",
     "language": "Русский",
+    "favourites": "Избранное",
+    "history": "История",
     "en": "Английский",
     "@en": {
         "description": "Код языка для английского"

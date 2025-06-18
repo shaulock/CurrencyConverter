@@ -1,11 +1,13 @@
 {
     "@@locale": "ro",
-    "helloWorld": "Salut Lume!",
+    "currencyConverter": "Convertor valutar",
     "changeThemeColor": "Schimbă culoarea temei",
     "changeThemeMode": "Comutare la modul {mode, select, light{luminos} dark{întunecat} other{sistem}}",
     "changeLanguage": "Schimbă limba",
     "language": "Română",
     "en": "Engleză",
+    "favourites": "Preferate",
+    "history": "Istoric",
     "@en": {
         "description": "Codul de limbă engleză"
     },

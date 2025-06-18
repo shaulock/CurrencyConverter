@@ -1,10 +1,12 @@
 {
     "@@locale": "tr",
     "language": "Türkçe",
-    "helloWorld": "Selam Dünya!",
+    "currencyConverter": "Döviz Çevirici",
     "changeThemeColor": "Tema Rengini Değiştir",
     "changeThemeMode" : "{mode, select, light{Açık moda} dark{Koyu moda} other{Sistem moduna}} Geç",
     "changeLanguage": "Dili değiştir",
+    "favourites": "Favoriler",
+    "history": "Geçmiş",
     "en": "İngilizce",
     "@en": {
         "description": "İngilizce dil kodu"
