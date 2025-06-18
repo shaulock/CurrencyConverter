@@ -32,31 +32,35 @@ class Root extends StatelessWidget {
     }
     return Sizer(
       builder: (context, orientation, screenType) {
-        return Obx(
-          () => GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            supportedLocales: AppLocalizations.supportedLocales,
-            localizationsDelegates: [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            localeResolutionCallback: (locale, supportedLocales) {
-              // Use Latin if available for your own translations
-              if (locale != null && supportedLocales.contains(locale)) {
-                return locale;
-              }
-              // Fallback to English for built-in widgets
-              return const Locale('en');
-            },
-            builder: (context, child) {
-              return MediaQuery.withNoTextScaling(child: child!);
-            },
-            title: 'Currency Converter',
-            theme: colorController.themeData.value,
-            themeMode: colorController.themeMode.value,
-            home: HomePage(),
+        return SafeArea(
+          bottom: true,
+          top: false,
+          child: Obx(
+            () => GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              supportedLocales: AppLocalizations.supportedLocales,
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              localeResolutionCallback: (locale, supportedLocales) {
+                // Use Latin if available for your own translations
+                if (locale != null && supportedLocales.contains(locale)) {
+                  return locale;
+                }
+                // Fallback to English for built-in widgets
+                return const Locale('en');
+              },
+              builder: (context, child) {
+                return MediaQuery.withNoTextScaling(child: child!);
+              },
+              title: 'Currency Converter',
+              theme: colorController.themeData.value,
+              themeMode: colorController.themeMode.value,
+              home: HomePage(),
+            ),
           ),
         );
       },

@@ -1617,7 +1617,7 @@ class HomePage extends StatelessWidget {
                                         .themeData
                                         .value
                                         .colorScheme
-                                        .primaryContainer,
+                                        .primary,
                                 fontSize: ThemeConstants.subtitleFontSize.sp,
                                 fontWeight: FontWeight.w900,
                               ),
@@ -1670,7 +1670,7 @@ class HomePage extends StatelessWidget {
                                           .themeData
                                           .value
                                           .colorScheme
-                                          .onPrimary,
+                                          .primary,
                                 ),
                               ),
                               title: Row(
@@ -1690,7 +1690,7 @@ class HomePage extends StatelessWidget {
                                                   .themeData
                                                   .value
                                                   .colorScheme
-                                                  .primaryContainer,
+                                                  .primary,
                                           fontSize:
                                               ThemeConstants
                                                   .subtitleFontSize
@@ -1711,7 +1711,7 @@ class HomePage extends StatelessWidget {
                                                   .themeData
                                                   .value
                                                   .colorScheme
-                                                  .primaryContainer,
+                                                  .primary,
                                           fontSize:
                                               ThemeConstants
                                                   .subtitleFontSize
@@ -1732,7 +1732,7 @@ class HomePage extends StatelessWidget {
                                                   .themeData
                                                   .value
                                                   .colorScheme
-                                                  .primaryContainer,
+                                                  .primary,
                                           fontSize:
                                               ThemeConstants
                                                   .subtitleFontSize
@@ -1763,7 +1763,7 @@ class HomePage extends StatelessWidget {
                                           .themeData
                                           .value
                                           .colorScheme
-                                          .primaryContainer,
+                                          .primary,
                                 ),
                               ),
                             );

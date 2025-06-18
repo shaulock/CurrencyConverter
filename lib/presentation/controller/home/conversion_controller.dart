@@ -30,6 +30,8 @@ class ConversionController extends GetxController {
     double tempAmount = fromAmount.value;
     fromAmount.value = toAmount.value;
     toAmount.value = tempAmount;
+
+    rate.value = 1 / rate.value;
   }
 
   bool isConversionInFavourites() {
@@ -58,7 +60,7 @@ class ConversionController extends GetxController {
     super.onInit();
     var lastInHistory = history.getLastConversion();
     fromAmount = 0.0.obs;
-    rate = 0.0.obs;
+    rate = 1.0.obs;
     isLoading = false.obs;
     toAmount = 0.0.obs;
     fromCurrency =
