@@ -2,34 +2,24 @@ import 'package:currency_converter/data/repository/fetch_conversion_rates_reposi
 import 'package:currency_converter/data/request/conversion_rates_from_base_currency_request.dart';
 import 'package:currency_converter/domain/repository/fetch_conversion_rates_repository.dart';
 import 'package:currency_converter/utils/constants/theme_constants.dart';
-import 'package:currency_converter/utils/constants/url_constants.dart';
-import 'package:currency_converter/utils/responses/conversion_rates_from_base_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
 FetchConversionRatesRepository repository =
     FetchConversionRatesRepositoryImpl();
 
-Future<ConversionRatesFromBaseCurrency> fetchConversionRates({
-  DateTime? date,
-  String baseCurrency = 'usd',
+Future<double> fetchConversionRate({
+  required String fromCurrency,
+  required String toCurrency,
 }) async {
-  String dateValue =
-      date != null
-          ? DateFormat('yyyy-MM-dd').format(date)
-          : UrlConstants.dateNow;
-  String apiVersion = UrlConstants.apiVersion;
   ConversionRatesFromBaseCurrencyRequest request =
       ConversionRatesFromBaseCurrencyRequest(
-        date: dateValue,
-        apiVersion: apiVersion,
-        baseCurrency: baseCurrency,
+        fromCurrency: fromCurrency,
+        toCurrency: toCurrency,
       );
   try {
-    ConversionRatesFromBaseCurrency responee = await repository
-        .fetchConversionRates(request);
+    var responee = await repository.fetchConversionRate(request);
     return responee;
   } catch (e) {
     Get.showSnackbar(
@@ -51,10 +41,6 @@ Future<ConversionRatesFromBaseCurrency> fetchConversionRates({
         ],
       ),
     );
-    return ConversionRatesFromBaseCurrency(
-      baseCurrency: baseCurrency,
-      dateOfRates: DateFormat('yyyy-MM-dd').parse(dateValue),
-      multiplicationRates: {},
-    );
+    return 0.0;
   }
 }

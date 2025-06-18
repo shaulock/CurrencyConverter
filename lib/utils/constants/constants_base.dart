@@ -1,4 +1,5 @@
 import 'package:currency_converter/l10n/app_localizations.dart';
+import 'package:currency_converter/presentation/controller/home/conversion_controller.dart';
 import 'package:currency_converter/presentation/controller/home/date_time_controller.dart';
 import 'package:currency_converter/presentation/controller/settings/color_controller.dart';
 import 'package:currency_converter/presentation/controller/settings/language_and_format_controller.dart';
@@ -12,9 +13,13 @@ final LanguageController languageAndFormatController = Get.find(
   tag: 'language',
 );
 final DateTimeController dateTimeController = Get.find(tag: 'date_time');
+final ConversionController conversionController = Get.find(tag: 'conversion');
+
 final Favorites favorites = Favorites();
 final Settings settings = Settings();
 final History history = History();
+
+List<String> supportedCurrencies = [];
 
 List<String> supportedLanguages = [
   'English',

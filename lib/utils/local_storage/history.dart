@@ -19,6 +19,7 @@ class History {
       await box.delete(oldestKey);
       await box.put(conversion.conversionKey, conversion);
     }
+    await box.put('last', conversion);
   }
 
   Future<void> removeHistory(Conversion conversion) async {
@@ -26,6 +27,15 @@ class History {
     if (box.containsKey(conversion.conversionKey)) {
       await box.delete(conversion.conversionKey);
     }
+  }
+
+  Conversion getLastConversion() {
+    final box = Hive.box<Conversion>(_historyKey);
+    return box.get(
+          'last',
+          defaultValue: Conversion(fromCurrency: 'USD', toCurrency: 'EUR'),
+        )
+        as Conversion;
   }
 
   Future<void> clearHistory() async {

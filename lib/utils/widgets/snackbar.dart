@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-GetSnackBar showError(String message) {
-  return GetSnackBar(
+showErrorSnakcbar(String message) => Get.showSnackbar(
+  GetSnackBar(
     title: "Error Occurred",
     message: message,
     duration: Duration(seconds: 2),
@@ -20,5 +20,5 @@ GetSnackBar showError(String message) {
         offset: Offset(0, 2),
       ),
     ],
-  );
-}
+  ),
+);

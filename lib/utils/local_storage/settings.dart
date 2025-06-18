@@ -32,7 +32,7 @@ class Settings {
     final box = Hive.box(_settingsKey);
     List<double> values = box.get(
       _themeColorKey,
-      defaultValue: [255, 33, 131, 144],
+      defaultValue: [255.0, 33.0, 131.0, 144.0],
     );
     return Color.fromARGB(
       (values[0]).floor(),
