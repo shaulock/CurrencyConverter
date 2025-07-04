@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:currency_converter/l10n/app_localizations.dart';
 import 'package:currency_converter/utils/constants/constants_base.dart';
@@ -115,10 +116,6 @@ class ChangeLanguageDialog extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  String makeConvertedAmount() {
-    return makeConvertedAmountFromDouble(conversionController.toAmountDouble);
-  }
-
   String makeConvertedAmountFromDouble(double amount, {int decimal = 2}) {
     return (conversionController.toCurrency.value.symbolOnLeft
             ? conversionController.toCurrency.value.symbol
@@ -165,10 +162,6 @@ class HomePage extends StatelessWidget {
         (conversionController.fromCurrency.value.symbolOnLeft
             ? ''
             : conversionController.fromCurrency.value.symbol);
-  }
-
-  String makeAmount() {
-    return makeFromAmountFromDouble(conversionController.fromAmountDouble);
   }
 
   selectFromCurrency(BuildContext context) {
@@ -319,13 +312,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Rx<Color> fromCursorColor = Colors.transparent.obs;
     Rx<Color> toCursorColor = Colors.transparent.obs;
+    Rx<DateTime> currentDate = DateTime.now().obs;
+    Timer.periodic(Duration(seconds: 10), (timer) {
+      currentDate.value = DateTime.now();
+    });
     return Obx(
       () => Scaffold(
         appBar: AppBar(
           centerTitle: true,
           leading: IconButton(
             icon: Icon(
-              Icons.menu,
+              Icons.settings_rounded,
               size: ThemeConstants.iconSize.sp,
               color: colorController.themeData.value.colorScheme.onPrimary,
             ),
@@ -374,9 +371,26 @@ class HomePage extends StatelessWidget {
                                     fontSize: ThemeConstants.buttonFontSize.sp,
                                   ),
                             ),
-                            trailing: CircleAvatar(
-                              backgroundColor: colorController.seedColor.value,
-                              radius: ThemeConstants.buttonFontSize.sp,
+                            trailing: Container(
+                              width: ThemeConstants.buttonFontSize.sp * 2,
+                              height: ThemeConstants.buttonFontSize.sp * 2,
+                              padding: EdgeInsets.all(0.3.w),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color:
+                                      colorController
+                                          .themeData
+                                          .value
+                                          .colorScheme
+                                          .onPrimary,
+                                  width: 0.3.w,
+                                ),
+                              ),
+                              child: CircleAvatar(
+                                backgroundColor:
+                                    colorController.seedColor.value,
+                              ),
                             ),
                             onTap: () {
                               Get.dialog(
@@ -470,20 +484,24 @@ class HomePage extends StatelessWidget {
                                     fontSize: ThemeConstants.buttonFontSize.sp,
                                   ),
                             ),
-                            trailing: Icon(
-                              colorController.themeMode.value == ThemeMode.dark
-                                  ? Icons.wb_sunny_rounded
-                                  : colorController.themeMode.value ==
-                                      ThemeMode.light
-                                  ? Icons.nightlight_round_rounded
-                                  : Icons.brightness_auto_rounded,
-                              size: ThemeConstants.iconSize.sp,
-                              color:
-                                  colorController
-                                      .themeData
-                                      .value
-                                      .colorScheme
-                                      .onPrimary,
+                            trailing: Transform.rotate(
+                              angle: -pi / 4,
+                              child: Icon(
+                                colorController.themeMode.value ==
+                                        ThemeMode.dark
+                                    ? Icons.wb_sunny_rounded
+                                    : colorController.themeMode.value ==
+                                        ThemeMode.light
+                                    ? Icons.nightlight_round_rounded
+                                    : Icons.brightness_auto_rounded,
+                                size: ThemeConstants.iconSize.sp,
+                                color:
+                                    colorController
+                                        .themeData
+                                        .value
+                                        .colorScheme
+                                        .onPrimary,
+                              ),
                             ),
                             onTap: () {
                               colorController.changeBrightness();
@@ -641,7 +659,7 @@ class HomePage extends StatelessWidget {
                                             .themeData
                                             .value
                                             .colorScheme
-                                            .primaryContainer,
+                                            .onPrimary,
                                     fontSize:
                                         ThemeConstants.subtitleFontSize.sp,
                                     fontWeight: FontWeight.w900,
@@ -674,6 +692,26 @@ class HomePage extends StatelessWidget {
                                       conversion.toCurrency,
                                     )!;
                                 return ListTile(
+                                  onTap: () async {
+                                    await conversionController.setFromCurrency(
+                                      fromCurrency,
+                                    );
+                                    await conversionController.setToCurrency(
+                                      toCurrency,
+                                    );
+                                    conversionController.fromAmount.value = 1;
+                                    conversionController
+                                        .fromAmountIsDecimal
+                                        .value = false;
+                                    conversionController
+                                        .fromAmountDecimalCount
+                                        .value = 0;
+                                    conversionController
+                                        .fromAmountDecimalDigits
+                                        .value = 0;
+                                    conversionController.calculateToAmount();
+                                    Get.back();
+                                  },
                                   leading: IconButton(
                                     onPressed: () async {
                                       history.removeHistory(conversion);
@@ -705,71 +743,79 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   title: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                    // mainAxisAlignment:
+                                    //     MainAxisAlignment.spaceAround,
                                     children: [
-                                      Text(
-                                        '${fromCurrency.code} ${fromCurrency.flag != null ? CurrencyUtils.currencyToEmoji(fromCurrency) : fromCurrency.flag}',
-                                        style: colorController
-                                            .themeData
-                                            .value
-                                            .textTheme
-                                            .headlineMedium
-                                            ?.copyWith(
-                                              color:
-                                                  colorController
-                                                      .themeData
-                                                      .value
-                                                      .colorScheme
-                                                      .primaryContainer,
-                                              fontSize:
-                                                  ThemeConstants
-                                                      .subtitleFontSize
-                                                      .sp,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                      Expanded(
+                                        child: Text(
+                                          '${fromCurrency.code} ${fromCurrency.flag != null ? CurrencyUtils.currencyToEmoji(fromCurrency) : fromCurrency.flag}',
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimary,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                        ),
                                       ),
-                                      Text(
-                                        '↔',
-                                        style: colorController
-                                            .themeData
-                                            .value
-                                            .textTheme
-                                            .headlineMedium
-                                            ?.copyWith(
-                                              color:
-                                                  colorController
-                                                      .themeData
-                                                      .value
-                                                      .colorScheme
-                                                      .primaryContainer,
-                                              fontSize:
-                                                  ThemeConstants
-                                                      .subtitleFontSize
-                                                      .sp,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                      Expanded(
+                                        child: Text(
+                                          '↔',
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimary,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                          textAlign: TextAlign.center,
+                                        ),
                                       ),
-                                      Text(
-                                        '${toCurrency.code} ${toCurrency.flag != null ? CurrencyUtils.currencyToEmoji(toCurrency) : toCurrency.flag}',
-                                        style: colorController
-                                            .themeData
-                                            .value
-                                            .textTheme
-                                            .headlineMedium
-                                            ?.copyWith(
-                                              color:
-                                                  colorController
-                                                      .themeData
-                                                      .value
-                                                      .colorScheme
-                                                      .primaryContainer,
-                                              fontSize:
-                                                  ThemeConstants
-                                                      .subtitleFontSize
-                                                      .sp,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                      Expanded(
+                                        child: Text(
+                                          '${toCurrency.code} ${toCurrency.flag != null ? CurrencyUtils.currencyToEmoji(toCurrency) : toCurrency.flag}',
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimary,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                          textAlign: TextAlign.right,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -781,20 +827,27 @@ class HomePage extends StatelessWidget {
                                       await conversionController.setToCurrency(
                                         toCurrency,
                                       );
-                                      conversionController.fromAmount.value =
-                                          100;
-                                      conversionController.toAmount.value =
-                                          conversionController.rate.value * 100;
+                                      conversionController.fromAmount.value = 1;
+                                      conversionController
+                                          .fromAmountIsDecimal
+                                          .value = false;
+                                      conversionController
+                                          .fromAmountDecimalCount
+                                          .value = 0;
+                                      conversionController
+                                          .fromAmountDecimalDigits
+                                          .value = 0;
+                                      conversionController.calculateToAmount();
                                     },
                                     icon: Icon(
-                                      Icons.arrow_forward_rounded,
+                                      Icons.currency_exchange_rounded,
                                       size: ThemeConstants.iconSize.sp,
                                       color:
                                           colorController
                                               .themeData
                                               .value
                                               .colorScheme
-                                              .primaryContainer,
+                                              .onPrimary,
                                     ),
                                   ),
                                 );
@@ -820,6 +873,53 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: [
+                  SizedBox(height: 3.h),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    textBaseline: TextBaseline.alphabetic,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    children: [
+                      Text(
+                        AppLocalizations.of(
+                          context,
+                        )!.weekday(DateFormat.EEEE().format(currentDate.value)),
+                        style: colorController
+                            .themeData
+                            .value
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(
+                              color:
+                                  colorController
+                                      .themeData
+                                      .value
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                              fontSize: ThemeConstants.subtitleFontSize.sp,
+                              fontWeight: FontWeight.w900,
+                            ),
+                      ),
+                      Text(
+                        '${AppLocalizations.of(context)!.month(DateFormat.MMMM().format(currentDate.value))} ${DateFormat.d().format(currentDate.value)}, ${DateFormat.y().format(currentDate.value)}',
+                        style: colorController
+                            .themeData
+                            .value
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(
+                              color:
+                                  colorController
+                                      .themeData
+                                      .value
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                              fontSize: ThemeConstants.subtitleFontSize.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 3.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -905,19 +1005,17 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SizedBox(width: 5.w),
-                    SizedBox(
-                      width: 20.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              selectFromCurrency(context);
-                            },
-                            style: IconButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            icon: Text(
+                    IconButton(
+                      onPressed: () {
+                        selectFromCurrency(context);
+                      },
+                      style: IconButton.styleFrom(padding: EdgeInsets.zero),
+                      icon: SizedBox(
+                        width: 20.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
                               '${conversionController.fromCurrency.value.code} ${conversionController.fromCurrency.value.flag != null ? CurrencyUtils.currencyToEmoji(conversionController.fromCurrency.value) : conversionController.fromCurrency.value.flag}',
                               style: colorController
                                   .themeData
@@ -935,19 +1033,19 @@ class HomePage extends StatelessWidget {
                                   ),
                               textAlign: TextAlign.center,
                             ),
-                          ),
-                          SizedBox(width: 1.w),
-                          Icon(
-                            Icons.arrow_drop_down_rounded,
-                            size: ThemeConstants.iconSize.sp,
-                            color:
-                                colorController
-                                    .themeData
-                                    .value
-                                    .colorScheme
-                                    .onPrimaryContainer,
-                          ),
-                        ],
+                            SizedBox(width: 1.w),
+                            Icon(
+                              Icons.arrow_drop_down_rounded,
+                              size: ThemeConstants.iconSize.sp,
+                              color:
+                                  colorController
+                                      .themeData
+                                      .value
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(width: 2.w),
@@ -966,7 +1064,7 @@ class HomePage extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           if (conversionController.isLoading.value) return;
-                          Timer.periodic(Duration(milliseconds: 500), (timer) {
+                          Timer.periodic(Duration(milliseconds: 350), (timer) {
                             if (!(Get.isBottomSheetOpen ?? true)) {
                               fromCursorColor.value = Colors.transparent;
                               timer.cancel();
@@ -997,114 +1095,75 @@ class HomePage extends StatelessWidget {
                                     Row(
                                       children: [
                                         for (int j = 0; j < 3; j++)
-                                          !(i == 3 && j == 0)
-                                              ? Expanded(
-                                                child: SizedBox(
-                                                  child: TextButton(
-                                                    onPressed: () {
-                                                      if (conversionController
-                                                                  .fromAmount
-                                                                  .value
-                                                                  .toStringAsFixed(
-                                                                    0,
-                                                                  )
-                                                                  .length >=
-                                                              10 &&
-                                                          !(i == 3 && j == 2)) {
-                                                        return;
-                                                      }
-                                                      if (i < 3) {
-                                                        conversionController
-                                                                .fromAmount
-                                                                .value =
-                                                            conversionController
-                                                                    .fromAmount
-                                                                    .value *
-                                                                10 +
-                                                            (((i) * 3) + j + 1);
-                                                      } else {
-                                                        if (j == 1) {
-                                                          conversionController
-                                                                  .fromAmount
-                                                                  .value =
-                                                              conversionController
-                                                                      .fromAmount
-                                                                      .value *
-                                                                  10 +
-                                                              0;
-                                                        } else {
-                                                          conversionController
-                                                                  .fromAmount
-                                                                  .value =
-                                                              (conversionController
-                                                                          .fromAmount
-                                                                          .value /
-                                                                      10)
-                                                                  .floorToDouble();
-                                                        }
-                                                      }
-                                                      conversionController
-                                                              .toAmount
-                                                              .value =
-                                                          conversionController
-                                                              .fromAmount
-                                                              .value *
-                                                          conversionController
-                                                              .rate
-                                                              .value;
-                                                    },
-                                                    style: ButtonStyle(
-                                                      backgroundColor:
-                                                          WidgetStatePropertyAll(
-                                                            Colors.transparent,
-                                                          ),
+                                          Expanded(
+                                            child: SizedBox(
+                                              child: TextButton(
+                                                onPressed: () {
+                                                  conversionController
+                                                      .fromTyping(i, j);
+                                                  conversionController
+                                                      .calculateToAmount();
+                                                },
+                                                style: ButtonStyle(
+                                                  backgroundColor:
+                                                      WidgetStatePropertyAll(
+                                                        Colors.transparent,
+                                                      ),
 
-                                                      shape: WidgetStatePropertyAll(
-                                                        RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      padding:
-                                                          WidgetStatePropertyAll(
-                                                            EdgeInsets.zero,
+                                                  shape: WidgetStatePropertyAll(
+                                                    RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            0,
                                                           ),
-                                                    ),
-                                                    child: Container(
-                                                      height: 7.5.h,
-                                                      alignment:
-                                                          Alignment.center,
-                                                      child: Text(
-                                                        i < 3
-                                                            ? '${(i) * 3 + (j + 1)}'
-                                                            : (j == 1
-                                                                ? '0'
-                                                                : '←'),
-                                                        style: colorController
-                                                            .themeData
-                                                            .value
-                                                            .textTheme
-                                                            .headlineMedium
-                                                            ?.copyWith(
-                                                              color:
-                                                                  colorController
-                                                                      .themeData
-                                                                      .value
-                                                                      .colorScheme
-                                                                      .onPrimary,
-                                                              fontSize:
-                                                                  ThemeConstants
-                                                                      .titleFontSize
-                                                                      .sp,
-                                                            ),
-                                                      ),
                                                     ),
                                                   ),
+                                                  padding:
+                                                      WidgetStatePropertyAll(
+                                                        EdgeInsets.zero,
+                                                      ),
                                                 ),
-                                              )
-                                              : Expanded(child: SizedBox()),
+                                                child: Container(
+                                                  height: 7.5.h,
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    i < 3
+                                                        ? '${(i) * 3 + (j + 1)}'
+                                                        : (j == 1
+                                                            ? '0'
+                                                            : j == 0
+                                                            ? NumberFormat.simpleCurrency(
+                                                              decimalDigits: 1,
+                                                              name: '',
+                                                              locale: supportedLanguageCodes(
+                                                                languageAndFormatController
+                                                                    .selectedLanguage
+                                                                    .value,
+                                                              ),
+                                                            ).format(0)[1]
+                                                            : '←'),
+                                                    style: colorController
+                                                        .themeData
+                                                        .value
+                                                        .textTheme
+                                                        .headlineMedium
+                                                        ?.copyWith(
+                                                          color:
+                                                              colorController
+                                                                  .themeData
+                                                                  .value
+                                                                  .colorScheme
+                                                                  .onPrimary,
+                                                          fontSize:
+                                                              ThemeConstants
+                                                                  .titleFontSize
+                                                                  .sp,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                       ],
                                     ),
                                 ],
@@ -1150,8 +1209,51 @@ class HomePage extends StatelessWidget {
                                   )
                                   : Row(
                                     children: [
+                                      if (conversionController
+                                          .fromCurrency
+                                          .value
+                                          .symbolOnLeft)
+                                        Text(
+                                          (conversionController
+                                                  .fromCurrency
+                                                  .value
+                                                  .symbol) +
+                                              (conversionController
+                                                      .fromCurrency
+                                                      .value
+                                                      .spaceBetweenAmountAndSymbol
+                                                  ? ' '
+                                                  : ''),
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
                                       Text(
-                                        makeAmount(),
+                                        NumberFormat.simpleCurrency(
+                                          decimalDigits: 0,
+                                          name: '',
+                                          locale: supportedLanguageCodes(
+                                            languageAndFormatController
+                                                .selectedLanguage
+                                                .value,
+                                          ),
+                                        ).format(
+                                          conversionController.fromAmount.value,
+                                        ),
                                         style: colorController
                                             .themeData
                                             .value
@@ -1170,13 +1272,119 @@ class HomePage extends StatelessWidget {
                                                       .sp,
                                             ),
                                       ),
-                                      SizedBox(width: 1.w),
+                                      if (conversionController
+                                          .fromAmountIsDecimal
+                                          .value)
+                                        Text(
+                                          NumberFormat.simpleCurrency(
+                                            decimalDigits: 1,
+                                            name: '',
+                                            locale: supportedLanguageCodes(
+                                              languageAndFormatController
+                                                  .selectedLanguage
+                                                  .value,
+                                            ),
+                                          ).format(0)[1],
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
+                                      if (conversionController
+                                          .fromAmountIsDecimal
+                                          .value)
+                                        Text(
+                                          conversionController
+                                                      .fromAmountDecimalCount
+                                                      .value ==
+                                                  0
+                                              ? ''
+                                              : (conversionController
+                                                          .fromAmountDecimalDigits
+                                                          .value
+                                                          .toDouble() /
+                                                      pow(
+                                                        10,
+                                                        conversionController
+                                                            .fromAmountDecimalCount
+                                                            .value,
+                                                      ))
+                                                  .toStringAsFixed(
+                                                    conversionController
+                                                        .fromAmountDecimalCount
+                                                        .value,
+                                                  )
+                                                  .substring(2),
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
                                       AnimatedContainer(
                                         duration: Duration(milliseconds: 250),
                                         height: 4.h,
                                         width: 2,
                                         color: fromCursorColor.value,
                                       ),
+                                      if (!conversionController
+                                          .fromCurrency
+                                          .value
+                                          .symbolOnLeft)
+                                        Text(
+                                          (conversionController
+                                                      .fromCurrency
+                                                      .value
+                                                      .spaceBetweenAmountAndSymbol
+                                                  ? ' '
+                                                  : '') +
+                                              (conversionController
+                                                  .fromCurrency
+                                                  .value
+                                                  .symbol),
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
                                     ],
                                   ),
                         ),
@@ -1198,19 +1406,17 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SizedBox(width: 5.w),
-                    SizedBox(
-                      width: 20.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              selectToCurrency(context);
-                            },
-                            style: IconButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            icon: Text(
+                    IconButton(
+                      onPressed: () {
+                        selectToCurrency(context);
+                      },
+                      style: IconButton.styleFrom(padding: EdgeInsets.zero),
+                      icon: SizedBox(
+                        width: 20.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
                               '${conversionController.toCurrency.value.code} ${conversionController.toCurrency.value.flag != null ? CurrencyUtils.currencyToEmoji(conversionController.toCurrency.value) : conversionController.toCurrency.value.flag}',
                               style: colorController
                                   .themeData
@@ -1228,19 +1434,19 @@ class HomePage extends StatelessWidget {
                                   ),
                               textAlign: TextAlign.center,
                             ),
-                          ),
-                          SizedBox(width: 1.w),
-                          Icon(
-                            Icons.arrow_drop_down_rounded,
-                            size: ThemeConstants.iconSize.sp,
-                            color:
-                                colorController
-                                    .themeData
-                                    .value
-                                    .colorScheme
-                                    .onPrimaryContainer,
-                          ),
-                        ],
+                            SizedBox(width: 1.w),
+                            Icon(
+                              Icons.arrow_drop_down_rounded,
+                              size: ThemeConstants.iconSize.sp,
+                              color:
+                                  colorController
+                                      .themeData
+                                      .value
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(width: 2.w),
@@ -1259,7 +1465,7 @@ class HomePage extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           if (conversionController.isLoading.value) return;
-                          Timer.periodic(Duration(milliseconds: 500), (timer) {
+                          Timer.periodic(Duration(milliseconds: 350), (timer) {
                             if (!(Get.isBottomSheetOpen ?? true)) {
                               toCursorColor.value = Colors.transparent;
                               timer.cancel();
@@ -1290,115 +1496,77 @@ class HomePage extends StatelessWidget {
                                     Row(
                                       children: [
                                         for (int j = 0; j < 3; j++)
-                                          !(i == 3 && j == 0)
-                                              ? Expanded(
-                                                child: SizedBox(
-                                                  child: TextButton(
-                                                    onPressed: () {
-                                                      if (conversionController
-                                                                  .toAmount
-                                                                  .value
-                                                                  .toStringAsFixed(
-                                                                    0,
-                                                                  )
-                                                                  .length >=
-                                                              10 &&
-                                                          !(i == 3 && j == 2)) {
-                                                        return;
-                                                      }
-                                                      if (i < 3) {
-                                                        conversionController
-                                                                .toAmount
-                                                                .value =
-                                                            conversionController
-                                                                    .toAmount
-                                                                    .value *
-                                                                10 +
-                                                            (((i) * 3) + j + 1);
-                                                      } else {
-                                                        if (j == 1) {
-                                                          conversionController
-                                                                  .toAmount
-                                                                  .value =
-                                                              conversionController
-                                                                      .toAmount
-                                                                      .value *
-                                                                  10 +
-                                                              0;
-                                                        } else {
-                                                          conversionController
-                                                                  .toAmount
-                                                                  .value =
-                                                              (conversionController
-                                                                          .toAmount
-                                                                          .value /
-                                                                      10)
-                                                                  .floorToDouble();
-                                                        }
-                                                      }
-
-                                                      conversionController
-                                                              .fromAmount
-                                                              .value =
-                                                          conversionController
-                                                              .toAmount
-                                                              .value /
-                                                          conversionController
-                                                              .rate
-                                                              .value;
-                                                    },
-                                                    style: ButtonStyle(
-                                                      backgroundColor:
-                                                          WidgetStatePropertyAll(
-                                                            Colors.transparent,
-                                                          ),
-
-                                                      shape: WidgetStatePropertyAll(
-                                                        RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                0,
-                                                              ),
-                                                        ),
+                                          Expanded(
+                                            child: SizedBox(
+                                              child: TextButton(
+                                                onPressed: () {
+                                                  conversionController.toTyping(
+                                                    i,
+                                                    j,
+                                                  );
+                                                  conversionController
+                                                      .calculateFromAmount();
+                                                },
+                                                style: ButtonStyle(
+                                                  backgroundColor:
+                                                      WidgetStatePropertyAll(
+                                                        Colors.transparent,
                                                       ),
-                                                      padding:
-                                                          WidgetStatePropertyAll(
-                                                            EdgeInsets.zero,
+
+                                                  shape: WidgetStatePropertyAll(
+                                                    RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            0,
                                                           ),
-                                                    ),
-                                                    child: Container(
-                                                      height: 7.5.h,
-                                                      alignment:
-                                                          Alignment.center,
-                                                      child: Text(
-                                                        i < 3
-                                                            ? '${(i) * 3 + (j + 1)}'
-                                                            : (j == 1
-                                                                ? '0'
-                                                                : '←'),
-                                                        style: colorController
-                                                            .themeData
-                                                            .value
-                                                            .textTheme
-                                                            .headlineMedium
-                                                            ?.copyWith(
-                                                              color:
-                                                                  colorController
-                                                                      .themeData
-                                                                      .value
-                                                                      .colorScheme
-                                                                      .onPrimary,
-                                                              fontSize:
-                                                                  ThemeConstants
-                                                                      .titleFontSize
-                                                                      .sp,
-                                                            ),
-                                                      ),
                                                     ),
                                                   ),
+                                                  padding:
+                                                      WidgetStatePropertyAll(
+                                                        EdgeInsets.zero,
+                                                      ),
                                                 ),
-                                              )
-                                              : Expanded(child: SizedBox()),
+                                                child: Container(
+                                                  height: 7.5.h,
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    i < 3
+                                                        ? '${(i) * 3 + (j + 1)}'
+                                                        : (j == 1
+                                                            ? '0'
+                                                            : j == 0
+                                                            ? NumberFormat.simpleCurrency(
+                                                              decimalDigits: 1,
+                                                              name: '',
+                                                              locale: supportedLanguageCodes(
+                                                                languageAndFormatController
+                                                                    .selectedLanguage
+                                                                    .value,
+                                                              ),
+                                                            ).format(0)[1]
+                                                            : '←'),
+                                                    style: colorController
+                                                        .themeData
+                                                        .value
+                                                        .textTheme
+                                                        .headlineMedium
+                                                        ?.copyWith(
+                                                          color:
+                                                              colorController
+                                                                  .themeData
+                                                                  .value
+                                                                  .colorScheme
+                                                                  .onPrimary,
+                                                          fontSize:
+                                                              ThemeConstants
+                                                                  .titleFontSize
+                                                                  .sp,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                       ],
                                     ),
                                 ],
@@ -1444,8 +1612,51 @@ class HomePage extends StatelessWidget {
                                   )
                                   : Row(
                                     children: [
+                                      if (conversionController
+                                          .toCurrency
+                                          .value
+                                          .symbolOnLeft)
+                                        Text(
+                                          (conversionController
+                                                      .toCurrency
+                                                      .value
+                                                      .spaceBetweenAmountAndSymbol
+                                                  ? ' '
+                                                  : '') +
+                                              (conversionController
+                                                  .toCurrency
+                                                  .value
+                                                  .symbol),
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
                                       Text(
-                                        makeConvertedAmount(),
+                                        NumberFormat.simpleCurrency(
+                                          decimalDigits: 0,
+                                          name: '',
+                                          locale: supportedLanguageCodes(
+                                            languageAndFormatController
+                                                .selectedLanguage
+                                                .value,
+                                          ),
+                                        ).format(
+                                          conversionController.toAmount.value,
+                                        ),
                                         style: colorController
                                             .themeData
                                             .value
@@ -1464,13 +1675,111 @@ class HomePage extends StatelessWidget {
                                                       .sp,
                                             ),
                                       ),
-                                      SizedBox(width: 1.w),
+                                      if (conversionController
+                                          .toAmountIsDecimal
+                                          .value)
+                                        Text(
+                                          '.',
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
+                                      if (conversionController
+                                          .toAmountIsDecimal
+                                          .value)
+                                        Text(
+                                          conversionController
+                                                      .toAmountDecimalCount
+                                                      .value ==
+                                                  0
+                                              ? ''
+                                              : (conversionController
+                                                          .toAmountDecimalDigits
+                                                          .value
+                                                          .toDouble() /
+                                                      pow(
+                                                        10,
+                                                        conversionController
+                                                            .toAmountDecimalCount
+                                                            .value,
+                                                      ))
+                                                  .toStringAsFixed(
+                                                    conversionController
+                                                        .toAmountDecimalCount
+                                                        .value,
+                                                  )
+                                                  .substring(2),
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
                                       AnimatedContainer(
                                         duration: Duration(milliseconds: 250),
                                         height: 4.h,
                                         width: 2,
                                         color: toCursorColor.value,
                                       ),
+                                      if (!conversionController
+                                          .toCurrency
+                                          .value
+                                          .symbolOnLeft)
+                                        Text(
+                                          (conversionController
+                                                      .toCurrency
+                                                      .value
+                                                      .spaceBetweenAmountAndSymbol
+                                                  ? ' '
+                                                  : '') +
+                                              (conversionController
+                                                  .toCurrency
+                                                  .value
+                                                  .symbol),
+                                          style: colorController
+                                              .themeData
+                                              .value
+                                              .textTheme
+                                              .headlineMedium
+                                              ?.copyWith(
+                                                color:
+                                                    colorController
+                                                        .themeData
+                                                        .value
+                                                        .colorScheme
+                                                        .onPrimaryContainer,
+                                                fontSize:
+                                                    ThemeConstants
+                                                        .subtitleFontSize
+                                                        .sp,
+                                              ),
+                                        ),
                                     ],
                                   ),
                         ),
@@ -1521,7 +1830,7 @@ class HomePage extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    ' = ',
+                    '=',
                     textAlign: TextAlign.center,
                     style: colorController
                         .themeData
@@ -1541,7 +1850,7 @@ class HomePage extends StatelessWidget {
                   Text(
                     makeConvertedAmountFromDouble(
                       1 * conversionController.rate.value,
-                      decimal: 4,
+                      decimal: 3,
                     ),
                     textAlign: TextAlign.center,
                     style: colorController
@@ -1585,7 +1894,7 @@ class HomePage extends StatelessWidget {
                   width: 100.w,
                   decoration: BoxDecoration(
                     color: colorController.themeData.value.colorScheme.primary
-                        .withValues(alpha: 0.4),
+                        .withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(
                       ThemeConstants.cardRadius.sp,
                     ),
@@ -1645,6 +1954,24 @@ class HomePage extends StatelessWidget {
                                   conversion.toCurrency,
                                 )!;
                             return ListTile(
+                              onTap: () async {
+                                await conversionController.setFromCurrency(
+                                  fromCurrency,
+                                );
+                                await conversionController.setToCurrency(
+                                  toCurrency,
+                                );
+                                conversionController.fromAmount.value = 1;
+                                conversionController.fromAmountIsDecimal.value =
+                                    false;
+                                conversionController
+                                    .fromAmountDecimalCount
+                                    .value = 0;
+                                conversionController
+                                    .fromAmountDecimalDigits
+                                    .value = 0;
+                                conversionController.calculateToAmount();
+                              },
                               leading: IconButton(
                                 onPressed: () async {
                                   favorites.removeFavorite(conversion);
@@ -1674,71 +2001,77 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               title: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Text(
-                                    '${fromCurrency.code} ${fromCurrency.flag != null ? CurrencyUtils.currencyToEmoji(fromCurrency) : fromCurrency.flag}',
-                                    style: colorController
-                                        .themeData
-                                        .value
-                                        .textTheme
-                                        .headlineMedium
-                                        ?.copyWith(
-                                          color:
-                                              colorController
-                                                  .themeData
-                                                  .value
-                                                  .colorScheme
-                                                  .primary,
-                                          fontSize:
-                                              ThemeConstants
-                                                  .subtitleFontSize
-                                                  .sp,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                  Expanded(
+                                    child: Text(
+                                      '${fromCurrency.code} ${fromCurrency.flag != null ? CurrencyUtils.currencyToEmoji(fromCurrency) : fromCurrency.flag}',
+                                      style: colorController
+                                          .themeData
+                                          .value
+                                          .textTheme
+                                          .headlineMedium
+                                          ?.copyWith(
+                                            color:
+                                                colorController
+                                                    .themeData
+                                                    .value
+                                                    .colorScheme
+                                                    .primary,
+                                            fontSize:
+                                                ThemeConstants
+                                                    .subtitleFontSize
+                                                    .sp,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
                                   ),
-                                  Text(
-                                    '↔',
-                                    style: colorController
-                                        .themeData
-                                        .value
-                                        .textTheme
-                                        .headlineMedium
-                                        ?.copyWith(
-                                          color:
-                                              colorController
-                                                  .themeData
-                                                  .value
-                                                  .colorScheme
-                                                  .primary,
-                                          fontSize:
-                                              ThemeConstants
-                                                  .subtitleFontSize
-                                                  .sp,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                  Expanded(
+                                    child: Text(
+                                      '↔',
+                                      style: colorController
+                                          .themeData
+                                          .value
+                                          .textTheme
+                                          .headlineMedium
+                                          ?.copyWith(
+                                            color:
+                                                colorController
+                                                    .themeData
+                                                    .value
+                                                    .colorScheme
+                                                    .primary,
+                                            fontSize:
+                                                ThemeConstants
+                                                    .subtitleFontSize
+                                                    .sp,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                      textAlign: TextAlign.center,
+                                    ),
                                   ),
-                                  Text(
-                                    '${toCurrency.code} ${toCurrency.flag != null ? CurrencyUtils.currencyToEmoji(toCurrency) : toCurrency.flag}',
-                                    style: colorController
-                                        .themeData
-                                        .value
-                                        .textTheme
-                                        .headlineMedium
-                                        ?.copyWith(
-                                          color:
-                                              colorController
-                                                  .themeData
-                                                  .value
-                                                  .colorScheme
-                                                  .primary,
-                                          fontSize:
-                                              ThemeConstants
-                                                  .subtitleFontSize
-                                                  .sp,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                  Expanded(
+                                    child: Text(
+                                      '${toCurrency.code} ${toCurrency.flag != null ? CurrencyUtils.currencyToEmoji(toCurrency) : toCurrency.flag}',
+                                      style: colorController
+                                          .themeData
+                                          .value
+                                          .textTheme
+                                          .headlineMedium
+                                          ?.copyWith(
+                                            color:
+                                                colorController
+                                                    .themeData
+                                                    .value
+                                                    .colorScheme
+                                                    .primary,
+                                            fontSize:
+                                                ThemeConstants
+                                                    .subtitleFontSize
+                                                    .sp,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                      textAlign: TextAlign.right,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1751,12 +2084,20 @@ class HomePage extends StatelessWidget {
                                   await conversionController.setToCurrency(
                                     toCurrency,
                                   );
-                                  conversionController.fromAmount.value = 100;
-                                  conversionController.toAmount.value =
-                                      conversionController.rate.value * 100;
+                                  conversionController.fromAmount.value = 1;
+                                  conversionController
+                                      .fromAmountIsDecimal
+                                      .value = false;
+                                  conversionController
+                                      .fromAmountDecimalCount
+                                      .value = 0;
+                                  conversionController
+                                      .fromAmountDecimalDigits
+                                      .value = 0;
+                                  conversionController.calculateToAmount();
                                 },
                                 icon: Icon(
-                                  Icons.arrow_forward_rounded,
+                                  Icons.currency_exchange_rounded,
                                   size: ThemeConstants.iconSize.sp,
                                   color:
                                       colorController
